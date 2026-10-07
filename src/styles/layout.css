@@ -1,0 +1,21 @@
+.layout {
+  min-height: 100vh;
+}
+
+.layout__body {
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+.layout__content {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+}
+
+@media (max-width: 600px) {
+  .layout__content {
+    padding: 20px 16px;
+  }
+}
