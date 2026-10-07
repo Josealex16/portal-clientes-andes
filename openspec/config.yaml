@@ -1,0 +1,6 @@
+schema: spec-driven
+
+context: |
+  Portal de Clientes Andes: extranet de demostracion (Vite, React 18, TypeScript, React Router 6).
+  Interfaz en espanol. Autenticacion ficticia en localStorage (src/services/authService.ts).
+  Verificacion: npm run lint, npm test -- --run y npm run build deben quedar en verde.
