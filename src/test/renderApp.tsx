@@ -1,15 +1,17 @@
 import { render } from '@testing-library/react'
+import type { ReactNode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import App from '../App'
 import { AuthProvider } from '../context/AuthContext'
 
 const ROUTER_FUTURE = { v7_startTransition: true, v7_relativeSplatPath: true }
 
-export function renderApp(initialPath: string) {
+export function renderApp(initialPath: string, observer?: ReactNode) {
   return render(
     <MemoryRouter initialEntries={[initialPath]} future={ROUTER_FUTURE}>
       <AuthProvider>
         <App />
+        {observer}
       </AuthProvider>
     </MemoryRouter>,
   )
