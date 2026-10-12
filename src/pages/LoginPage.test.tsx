@@ -5,6 +5,16 @@ import { renderApp } from '../test/renderApp'
 import { getSession } from '../services/authService'
 
 describe('LoginPage', () => {
+  it('muestra el aviso de registro exitoso cuando llega en el estado de navegación', () => {
+    renderApp('/login', undefined, { registrationSuccess: true })
+    expect(screen.getByRole('status')).toHaveTextContent('Tu cuenta se creó correctamente.')
+  })
+
+  it('no muestra el aviso de registro en un ingreso normal', () => {
+    renderApp('/login')
+    expect(screen.queryByRole('status')).not.toBeInTheDocument()
+  })
+
   it('muestra el formulario de ingreso', () => {
     renderApp('/login')
     expect(screen.getByLabelText('Correo electrónico')).toBeInTheDocument()

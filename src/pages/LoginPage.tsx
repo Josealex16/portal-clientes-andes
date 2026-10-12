@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import FormField from '../components/FormField'
 import { useAuth } from '../context/AuthContext'
 import { AuthError } from '../services/authService'
@@ -28,11 +28,17 @@ function validateLogin(email: string, password: string): LoginErrors {
 
 export default function LoginPage() {
   const { user, signIn } = useAuth()
+  const location = useLocation()
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState<LoginErrors>({})
   const [formError, setFormError] = useState('')
+  const registrationSuccess =
+    typeof location.state === 'object' &&
+    location.state !== null &&
+    'registrationSuccess' in location.state &&
+    location.state.registrationSuccess === true
 
   if (user) {
     return <Navigate to="/" replace />
@@ -61,6 +67,12 @@ export default function LoginPage() {
           <h1 className="auth__title">Portal de Clientes Andes</h1>
         </div>
         <p className="auth__subtitle">Ingresa con tu cuenta para revisar tus pedidos y facturas.</p>
+
+        {registrationSuccess && (
+          <div className="banner banner--success" role="status">
+            Tu cuenta se creó correctamente. Inicia sesión para continuar.
+          </div>
+        )}
 
         {formError && (
           <div className="banner banner--error" role="alert">
