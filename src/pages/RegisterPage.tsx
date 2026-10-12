@@ -34,7 +34,7 @@ function validate(form: RegisterForm): RegisterForm {
   }
   if (Object.keys(errors).length > 0) return errors
 
-  if (form.password !== form.passwordConfirm.trim()) {
+  if (form.password !== form.confirmPassword) {
     errors.confirmPassword = 'Las contraseñas no coinciden.'
   }
   return errors

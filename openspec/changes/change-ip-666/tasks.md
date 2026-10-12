@@ -1,6 +1,6 @@
 ## 1. Validación del formulario de registro
 
-- [ ] 1.1 En `src/pages/RegisterPage.tsx`, corregir la validación para comparar `password` con `confirmPassword` antes de llamar a `register` y mostrar «Las contraseñas no coinciden.» en el campo de confirmación; añadir prueba de componente en `src/pages/RegisterPage.test.tsx` que envíe datos válidos con contraseñas distintas, compruebe el mensaje y verifique que no se registra una cuenta (escenarios «Confirmación diferente» y «Prueba automatizada de contraseñas distintas»; Vitest/Testing Library con `renderApp` y almacenamiento limpio).
+- [x] 1.1 En `src/pages/RegisterPage.tsx`, corregir la validación para comparar `password` con `confirmPassword` antes de llamar a `register` y mostrar «Las contraseñas no coinciden.» en el campo de confirmación; añadir prueba de componente en `src/pages/RegisterPage.test.tsx` que envíe datos válidos con contraseñas distintas, compruebe el mensaje y verifique que no se registra una cuenta (escenarios «Confirmación diferente» y «Prueba automatizada de contraseñas distintas»; Vitest/Testing Library con `renderApp` y almacenamiento limpio).
 
 ## 2. Flujo de éxito y aviso en ingreso
 
