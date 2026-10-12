@@ -61,7 +61,7 @@ export default function RegisterPage() {
       if (Object.keys(found).length > 0) return
 
       register({ name: form.name, email: form.email, password: form.password })
-      navigate('/login')
+      navigate('/login', { state: { registrationSuccess: true } })
     } catch (error) {
       setFormError(error instanceof AuthError ? error.message : GENERIC_ERROR)
     }
