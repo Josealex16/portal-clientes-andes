@@ -9,4 +9,4 @@
 
 ## 3. Verificación del cambio
 
-- [ ] 3.1 Ejecutar `npm run lint`, `npm test -- --run` y `npm run build`, y comprobar que los tres comandos terminan correctamente; no incluye correcciones indeterminadas.
+- [x] 3.1 Ejecutar `npm run lint`, `npm test -- --run` y `npm run build`, y comprobar que los tres comandos terminan correctamente; no incluye correcciones indeterminadas.
