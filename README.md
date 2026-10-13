@@ -25,6 +25,8 @@ La aplicación queda disponible en http://localhost:5173 (o en el puerto indicad
 
 También puedes crear otra cuenta desde "Regístrate" en la pantalla de ingreso.
 
+Al crear una cuenta con datos válidos y aceptar los términos, el portal guarda la cuenta y te lleva a la pantalla de ingreso con el aviso «Tu cuenta se creó correctamente. Inicia sesión para continuar.» Debes iniciar sesión explícitamente para entrar. Si la contraseña y su confirmación no coinciden, aparece «Las contraseñas no coinciden.» junto al campo «Confirmar contraseña» y no se registra la cuenta.
+
 ## Scripts
 
 | Comando | Qué hace |
