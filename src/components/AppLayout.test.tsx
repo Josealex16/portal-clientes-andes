@@ -28,8 +28,24 @@ describe('AppLayout', () => {
   it('marca como activa la sección actual', () => {
     login('demo@andes.example', 'Demo1234')
     renderApp('/facturas')
-    expect(screen.getByRole('link', { name: 'Facturas' })).toHaveAttribute('aria-current', 'page')
-    expect(screen.getByRole('link', { name: 'Pedidos' })).not.toHaveAttribute('aria-current')
+
+    const menu = screen.getByRole('navigation', { name: 'Menú principal' })
+    const links = within(menu).getAllByRole('link')
+    expect(links.map((link) => link.textContent)).toEqual([
+      'Inicio',
+      'Pedidos',
+      'Facturas',
+      'Soporte',
+      'Mi perfil',
+    ])
+    expect(within(menu).getByRole('link', { name: 'Facturas' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    )
+    expect(within(menu).getByRole('link', { name: 'Pedidos' })).not.toHaveAttribute('aria-current')
+
+    expect(screen.getByRole('heading', { name: 'Facturas' })).toBeInTheDocument()
+    expect(screen.getByRole('banner')).toBeInTheDocument()
   })
 
   it('navega entre secciones desde el menú', async () => {
