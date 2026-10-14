@@ -1,3 +1,7 @@
+## Purpose
+
+Describe la navegación autenticada del portal para que las opciones sean legibles, el estado activo esté alineado y el menú se adapte al ancho disponible sin obstruir el contenido.
+
 ## ADDED Requirements
 ### Requirement: Menú principal legible y alineado
 El portal SHALL mostrar completas las opciones Inicio, Pedidos, Facturas, Soporte y Mi perfil en el menú principal. SHALL alinear los iconos y textos de las opciones en columnas coherentes y mostrar el fondo activo y su barra indicadora alineados con la opción actual.
