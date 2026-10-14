@@ -4,4 +4,4 @@
 
 ## 2. Pruebas de navegación autenticada
 
-- [ ] 2.1 Ampliar `src/components/AppLayout.test.tsx` usando `login` y `renderApp` para probar en `/facturas` que las cinco etiquetas son completas, Facturas tiene `aria-current="page"` y Pedidos no, y que la vista autenticada conserva la navegación y el contenido esperado en el flujo integrado; incluir cobertura de los escenarios de etiquetas/iconos y opción activa de `client-navigation`. `npm run lint`, `npm test -- --run` y `npm run build` pasan. (Estimación: 100 líneas cambiadas.)
+- [x] 2.1 Ampliar `src/components/AppLayout.test.tsx` usando `login` y `renderApp` para probar en `/facturas` que las cinco etiquetas son completas, Facturas tiene `aria-current="page"` y Pedidos no, y que la vista autenticada conserva la navegación y el contenido esperado en el flujo integrado; incluir cobertura de los escenarios de etiquetas/iconos y opción activa de `client-navigation`. `npm run lint`, `npm test -- --run` y `npm run build` pasan. (Estimación: 100 líneas cambiadas.)
