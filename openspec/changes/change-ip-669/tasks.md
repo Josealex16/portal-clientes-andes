@@ -1,6 +1,6 @@
 ## 1. Datos y generación CSV
 
-- [ ] 1.1 Añade el modelo `Payment` con `accountId`, fecha calendario, monto CLP entero y estado en español, datos ficticios separados de las facturas y un generador CSV puro en `src/data/sampleData.ts`; sus pruebas unitarias en `src/data/sampleData.test.ts` cubren «Exportar todos los pagos del mes anterior» (incluidos estados distintos y solo pagos de la cuenta), «Incluir los extremos del mes anterior y excluir fechas adyacentes» y «Mes anterior sin pagos» (solo encabezado), además de encabezado y formatos exactos `fecha,monto,estado`, `AAAA-MM-DD` y monto entero sin formato; `npm run build`, `npm run lint` y `npm test` pasan.
+- [x] 1.1 Añade el modelo `Payment` con `accountId`, fecha calendario, monto CLP entero y estado en español, datos ficticios separados de las facturas y un generador CSV puro en `src/data/sampleData.ts`; sus pruebas unitarias en `src/data/sampleData.test.ts` cubren «Exportar todos los pagos del mes anterior» (incluidos estados distintos y solo pagos de la cuenta), «Incluir los extremos del mes anterior y excluir fechas adyacentes» y «Mes anterior sin pagos» (solo encabezado), además de encabezado y formatos exactos `fecha,monto,estado`, `AAAA-MM-DD` y monto entero sin formato; `npm run build`, `npm run lint` y `npm test` pasan.
 
 ## 2. Página y acceso autenticado
 
