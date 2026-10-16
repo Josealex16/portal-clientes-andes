@@ -22,7 +22,7 @@ describe('AppLayout', () => {
     const labels = within(menu)
       .getAllByRole('link')
       .map((link) => link.textContent)
-    expect(labels).toEqual(['Inicio', 'Pedidos', 'Facturas', 'Soporte', 'Mi perfil'])
+    expect(labels).toEqual(['Inicio', 'Pedidos', 'Facturas', 'Pagos', 'Soporte', 'Mi perfil'])
   })
 
   it('marca como activa la sección actual', () => {
@@ -35,6 +35,7 @@ describe('AppLayout', () => {
       'Inicio',
       'Pedidos',
       'Facturas',
+      'Pagos',
       'Soporte',
       'Mi perfil',
     ])
@@ -56,6 +57,26 @@ describe('AppLayout', () => {
     expect(screen.getByRole('heading', { name: 'Pedidos' })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: 'Mi perfil' }))
     expect(screen.getByRole('heading', { name: 'Mi perfil' })).toBeInTheDocument()
+  })
+
+  it('permite acceder a Pagos desde el menú con sesión activa', async () => {
+    const user = userEvent.setup()
+    login('demo@andes.example', 'Demo1234')
+    renderApp('/')
+
+    await user.click(screen.getByRole('link', { name: 'Pagos' }))
+
+    expect(screen.getByRole('heading', { name: 'Pagos' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Descargar CSV de pagos' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Pagos' })).toHaveAttribute('aria-current', 'page')
+  })
+
+  it('redirige Pagos al ingreso y no presenta su página ni descarga sin sesión', () => {
+    renderApp('/pagos')
+
+    expect(screen.getByRole('button', { name: 'Ingresar' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Pagos' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Descargar CSV de pagos' })).not.toBeInTheDocument()
   })
 
   it('cierra la sesión', async () => {

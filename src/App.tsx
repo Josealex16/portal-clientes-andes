@@ -5,6 +5,7 @@ import InvoicesPage from './pages/InvoicesPage'
 import LoginPage from './pages/LoginPage'
 import NotFoundPage from './pages/NotFoundPage'
 import OrdersPage from './pages/OrdersPage'
+import PaymentsPage from './pages/PaymentsPage'
 import ProfilePage from './pages/ProfilePage'
 import RegisterPage from './pages/RegisterPage'
 import SupportPage from './pages/SupportPage'
@@ -18,6 +19,7 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="pedidos" element={<OrdersPage />} />
         <Route path="facturas" element={<InvoicesPage />} />
+        <Route path="pagos" element={<PaymentsPage />} />
         <Route path="soporte" element={<SupportPage />} />
         <Route path="perfil" element={<ProfilePage />} />
         <Route path="*" element={<NotFoundPage />} />

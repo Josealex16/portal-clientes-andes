@@ -14,6 +14,7 @@ const MENU: MenuItem[] = [
   { to: '/', label: 'Inicio', icon: <HomeIcon />, end: true },
   { to: '/pedidos', label: 'Pedidos', icon: <PackageIcon /> },
   { to: '/facturas', label: 'Facturas', icon: <ReceiptIcon /> },
+  { to: '/pagos', label: 'Pagos', icon: <ReceiptIcon /> },
   { to: '/soporte', label: 'Soporte', icon: <LifebuoyIcon /> },
   { to: '/perfil', label: 'Mi perfil', icon: <UserIcon /> },
 ]
