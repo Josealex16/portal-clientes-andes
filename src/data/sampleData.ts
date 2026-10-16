@@ -16,6 +16,13 @@ export interface Invoice {
   status: 'Pagada' | 'Pendiente' | 'Vencida'
 }
 
+export interface Payment {
+  accountId: string
+  date: string
+  amount: number
+  status: 'Pagado' | 'Pendiente' | 'Rechazado'
+}
+
 export const orders: Order[] = [
   { id: 'PED-2041', date: '2026-09-28', description: 'Resmas de papel carta (40 cajas)', total: 1280000, status: 'En preparación' },
   { id: 'PED-2037', date: '2026-09-21', description: 'Toner para impresoras láser (12 u.)', total: 864000, status: 'En camino' },
@@ -30,6 +37,13 @@ export const invoices: Invoice[] = [
   { id: 'FAC-8741', issued: '2026-09-13', due: '2026-10-13', amount: 2190000, status: 'Pagada' },
   { id: 'FAC-8702', issued: '2026-08-31', due: '2026-09-30', amount: 410000, status: 'Pagada' },
   { id: 'FAC-8655', issued: '2026-08-15', due: '2026-09-14', amount: 735000, status: 'Vencida' },
+]
+
+export const payments: Payment[] = [
+  { accountId: 'u-1001', date: '2026-09-05', amount: 1280000, status: 'Pagado' },
+  { accountId: 'u-1001', date: '2026-09-20', amount: 864000, status: 'Pendiente' },
+  { accountId: 'u-1001', date: '2026-10-02', amount: 2190000, status: 'Pagado' },
+  { accountId: 'u-2002', date: '2026-09-12', amount: 410000, status: 'Rechazado' },
 ]
 
 export const supportTopics = [
@@ -56,4 +70,20 @@ export function formatCurrency(value: number): string {
 export function formatDate(iso: string): string {
   const [year, month, day] = iso.split('-')
   return `${day}/${month}/${year}`
+}
+
+export function generatePaymentsCsv(
+  allPayments: Payment[],
+  accountId: string,
+  referenceDate: Date = new Date(),
+): string {
+  const previousMonth = new Date(referenceDate.getFullYear(), referenceDate.getMonth() - 1, 1)
+  const monthStart = `${previousMonth.getFullYear()}-${String(previousMonth.getMonth() + 1).padStart(2, '0')}-01`
+  const monthEndDay = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), 0).getDate()
+  const monthEnd = `${previousMonth.getFullYear()}-${String(previousMonth.getMonth() + 1).padStart(2, '0')}-${String(monthEndDay).padStart(2, '0')}`
+  const rows = allPayments
+    .filter((payment) => payment.accountId === accountId && payment.date >= monthStart && payment.date <= monthEnd)
+    .map((payment) => `${payment.date},${payment.amount},${payment.status}`)
+
+  return ['fecha,monto,estado', ...rows].join('\n')
 }
