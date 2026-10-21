@@ -1,3 +1,6 @@
+## Purpose
+Define the semantic visual tones used to distinguish invoice and order statuses in the customer portal.
+
 ## ADDED Requirements
 
 ### Requirement: Tonos de las insignias de facturas y pedidos
