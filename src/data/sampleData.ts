@@ -69,7 +69,7 @@ export function formatCurrency(value: number): string {
 
 export function formatDate(iso: string): string {
   const [year, month, day] = iso.split('-')
-  return `${month}/${day}/${year}`
+  return `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`
 }
 
 export function generatePaymentsCsv(
