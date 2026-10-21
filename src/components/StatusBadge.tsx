@@ -4,7 +4,7 @@ const TONES: Record<string, string> = {
   Entregado: 'success',
   Pagada: 'success',
   Pendiente: 'warning',
-  Vencida: 'danger',
+  Vencida: 'success',
 }
 
 export default function StatusBadge({ status }: { status: string }) {
