@@ -1,3 +1,7 @@
+## Purpose
+
+Esta capacidad define cómo se presentan las fechas de facturas y pedidos para facilitar su lectura en el portal.
+
 ## ADDED Requirements
 
 ### Requirement: Fechas de Facturas y Pedidos en formato día/mes/año
