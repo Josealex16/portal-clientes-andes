@@ -1,0 +1,3 @@
+## 1. Insignias de estado
+
+- [ ] 1.1 Corregir el mapa centralizado en `src/components/StatusBadge.tsx` para que «Vencida» use `badge--danger`, sin cambiar los demás tonos, y añadir `src/components/StatusBadge.test.tsx` con pruebas unitarias del componente usando Vitest y Testing Library para los seis estados: la insignia renderizada de «Vencida» tiene la clase `badge--danger`, «Pagada» `badge--success`, «Pendiente» y «En preparación» `badge--warning`, «En camino» `badge--info` y «Entregado» `badge--success`; pasan `npm run build`, `npm run lint` y `npm test` (verificación del repositorio: `npm test -- --run`).
