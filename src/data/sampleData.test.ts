@@ -1,7 +1,35 @@
 import { describe, expect, it } from 'vitest'
-import { generatePaymentsCsv, type Payment } from './sampleData'
+import { formatDate, generatePaymentsCsv, invoices, orders, type Payment } from './sampleData'
 
 const octoberSixteenth = new Date(2026, 9, 16)
+
+describe('formatDate', () => {
+  it('muestra las fechas de facturas y pedidos en formato día/mes/año sin alterar los valores ISO', () => {
+    const invoice = invoices[0]
+    const order = orders[0]
+
+    expect(formatDate(invoice.issued)).toBe('30/09/2026')
+    expect(formatDate(invoice.due)).toBe('30/10/2026')
+    expect(formatDate(order.date)).toBe('28/09/2026')
+    expect([invoice.issued, invoice.due, order.date]).toEqual([
+      '2026-09-30',
+      '2026-10-30',
+      '2026-09-28',
+    ])
+  })
+
+  it('completa con cero inicial un día de un dígito', () => {
+    expect(formatDate('2026-09-03')).toBe('03/09/2026')
+  })
+
+  it('completa con cero inicial un mes de un dígito', () => {
+    expect(formatDate('2026-03-03')).toBe('03/03/2026')
+  })
+
+  it('fija el formato día/mes/año para una fecha ISO', () => {
+    expect(formatDate('2026-09-30')).toBe('30/09/2026')
+  })
+})
 
 describe('generatePaymentsCsv', () => {
   it('exporta todos los pagos del mes anterior de la cuenta, sin filtrar estados', () => {
