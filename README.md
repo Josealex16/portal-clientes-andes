@@ -55,6 +55,10 @@ openspec/       Especificaciones del proyecto (OpenSpec)
 
 En las tablas de Facturas, las fechas de Emisión y Vencimiento, y en la tabla de Pedidos, la Fecha se muestran en formato día/mes/año (`DD/MM/AAAA`), con dos dígitos para el día y el mes. Por ejemplo, la fecha ISO `2026-09-30` se muestra como `30/09/2026`. La presentación no modifica los valores ISO de los datos.
 
+## Estados de facturas y pedidos
+
+Las insignias distinguen los estados por tono: «Pagada» y «Entregado» usan éxito; «Pendiente» y «En preparación», advertencia; «Vencida», peligro; y «En camino», informativo.
+
 ## Tecnología
 
 Vite, React 18, TypeScript, React Router 6, Vitest y Testing Library, ESLint 9.
