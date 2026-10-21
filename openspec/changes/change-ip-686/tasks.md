@@ -1,0 +1,3 @@
+## 1. Formato de fechas
+
+- [ ] 1.1 Cambiar `formatDate` en `src/data/sampleData.ts` para presentar día/mes/año con dos dígitos para día y mes, sin modificar las fechas ISO almacenadas, y ampliar `src/data/sampleData.test.ts` con pruebas unitarias: para Facturas y Pedidos, `2026-09-30`, `2026-10-30` y `2026-09-28` se formatean respectivamente como `30/09/2026`, `30/10/2026` y `28/09/2026`, y sus valores originales permanecen ISO; `2026-09-03` produce `03/09/2026`, `2026-03-03` produce `03/03/2026` y `formatDate('2026-09-30')` produce exactamente `30/09/2026`; pasan `npm test -- --run`, `npm run lint` y `npm run build`.
