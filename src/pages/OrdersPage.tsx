@@ -2,6 +2,8 @@ import { formatCurrency, formatDate, orders } from '../data/sampleData'
 import StatusBadge from '../components/StatusBadge'
 
 export default function OrdersPage() {
+  const total = orders.reduce((sum, order) => sum + order.total, 0)
+
   return (
     <section>
       <h1 className="page__title">Pedidos</h1>
@@ -29,6 +31,11 @@ export default function OrdersPage() {
                 </td>
               </tr>
             ))}
+            <tr>
+              <td colSpan={3}>Total de pedidos</td>
+              <td className="table__num">{formatCurrency(total)}</td>
+              <td />
+            </tr>
           </tbody>
         </table>
       </div>
