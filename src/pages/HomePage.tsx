@@ -37,6 +37,7 @@ export default function HomePage() {
           <li>Nuevo horario de despachos: martes y jueves por la mañana.</li>
           <li>Ya puedes solicitar copias de tus facturas desde la sección Soporte.</li>
           <li>Mantención programada del portal el sábado de 02:00 a 04:00.</li>
+          <li>Atención presencial en la oficina de Providencia, de lunes a viernes.</li>
         </ul>
       </div>
     </section>
