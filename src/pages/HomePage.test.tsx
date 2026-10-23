@@ -66,4 +66,35 @@ describe('HomePage', () => {
       '/soporte',
     )
   })
+
+  it('indica cómo pedir ayuda inmediatamente después de la introducción y conserva los demás bloques', () => {
+    renderHomePage()
+
+    const introduction = screen.getByText(
+      'Este es el resumen de tu cuenta al día de hoy. Los montos incluyen IVA.',
+    )
+    const guidance = screen.getByText('Para pedir ayuda, entra a Soporte desde el menú.')
+    expect(guidance.tagName).toBe('P')
+    expect(introduction.nextElementSibling).toBe(guidance)
+
+    expect(screen.getByRole('heading', { name: 'Pedidos abiertos' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Facturas por pagar' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Saldo pendiente' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Ver pedidos' })).toHaveAttribute('href', '/pedidos')
+    expect(screen.getByRole('link', { name: 'Ver facturas' })).toHaveAttribute('href', '/facturas')
+    expect(screen.getByRole('link', { name: '¿Dudas con tu saldo?' })).toHaveAttribute(
+      'href',
+      '/soporte',
+    )
+
+    const newsPanel = screen.getByRole('heading', { name: 'Novedades' }).parentElement
+    if (!newsPanel) throw new Error('No se encontró el panel de Novedades')
+    const news = within(newsPanel).getByRole('list')
+    expect(within(news).getAllByRole('listitem').map((item) => item.textContent)).toEqual([
+      'Nuevo horario de despachos: martes y jueves por la mañana.',
+      'Ya puedes solicitar copias de tus facturas desde la sección Soporte.',
+      'Mantención programada del portal el sábado de 02:00 a 04:00.',
+      'Atención presencial en la oficina de Providencia, de lunes a viernes.',
+    ])
+  })
 })
