@@ -55,6 +55,8 @@ openspec/       Especificaciones del proyecto (OpenSpec)
 
 En las tablas de Facturas, las fechas de Emisión y Vencimiento, y en la tabla de Pedidos, la Fecha se muestran en formato día/mes/año (`DD/MM/AAAA`), con dos dígitos para el día y el mes. Por ejemplo, la fecha ISO `2026-09-30` se muestra como `30/09/2026`. La presentación no modifica los valores ISO de los datos.
 
+En la tabla de Facturas, una factura «Pendiente» con vencimiento entre hoy y los tres días calendario siguientes, inclusive, muestra junto a la fecha el aviso `Vence en N días`, donde N es la diferencia en días calendario. Por ejemplo, si hoy es el 23/10/2026, una factura que vence el 26/10/2026 muestra `Vence en 3 días` y una que vence hoy muestra `Vence en 0 días`. No se muestra el aviso para facturas vencidas, con vencimiento posterior al plazo ni con otro estado. El cálculo usa el día calendario local del dispositivo; el aviso solo aparece en la tabla de Facturas y no modifica la fecha ISO.
+
 ## Estados de facturas y pedidos
 
 Las insignias distinguen los estados por tono: «Pagada» y «Entregado» usan éxito; «Pendiente» y «En preparación», advertencia; «Vencida», peligro; y «En camino», informativo.
