@@ -5,7 +5,7 @@ import StatusBadge from './StatusBadge'
 describe('StatusBadge', () => {
   it.each([
     ['Vencida', 'badge--danger'],
-    ['Pagada', 'badge--rota'],
+    ['Pagada', 'badge--success'],
     ['Pendiente', 'badge--warning'],
     ['En preparación', 'badge--warning'],
     ['En camino', 'badge--info'],
