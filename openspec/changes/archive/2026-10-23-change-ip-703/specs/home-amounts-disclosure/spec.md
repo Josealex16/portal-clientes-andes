@@ -1,3 +1,7 @@
+## Purpose
+
+Esta capacidad informa a las personas que consultan Inicio que los montos del resumen de su cuenta incluyen IVA.
+
 ## ADDED Requirements
 
 ### Requirement: Aclaración de IVA en el resumen de Inicio
