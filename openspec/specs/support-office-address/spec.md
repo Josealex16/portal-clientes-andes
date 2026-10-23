@@ -1,4 +1,9 @@
-## ADDED Requirements
+# support-office-address Specification
+
+## Purpose
+La capacidad informa a quienes consultan Soporte dónde se encuentra la oficina de atención presencial.
+
+## Requirements
 
 ### Requirement: Dirección de la oficina visible en Contacto directo
 La página Soporte SHALL mostrar en el bloque «Contacto directo» la línea «Oficina: Av. Providencia 1234, Santiago».
