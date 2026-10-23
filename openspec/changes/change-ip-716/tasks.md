@@ -1,0 +1,3 @@
+## 1. Página de ingreso
+
+- [ ] 1.1 Actualizar `docs/auth-page-disclosures.md` para explicitar que el formulario de `/login` conserva los campos «Correo electrónico» y «Contraseña» y el botón «Ingresar»; reforzar `src/pages/LoginPage.test.tsx` con pruebas unitarias de Vitest y Testing Library para «Consultar la ayuda para recuperar la contraseña» y «Conservar los controles del formulario de ingreso»: al abrir `/login`, se ve el párrafo exacto «Si olvidaste tu contraseña, escribe a soporte@andes.example.» como párrafo inmediatamente después del subtítulo y sin enlace, y también se ven los dos campos y el botón indicados; pasan `npm test -- --run`, `npm test`, `npm run build` y `npm run lint`.
