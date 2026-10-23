@@ -20,7 +20,7 @@ export default function SupportPage() {
 
       <div className="panel">
         <h2 className="panel__title">Contacto directo</h2>
-        <p>Correo: soporte@andes.example</p>
+        <p>Correo: <a href="mailto:soporte@andes.example">soporte@andes.example</a></p>
         <p>Teléfono: +56 2 2555 0100</p>
       </div>
     </section>
