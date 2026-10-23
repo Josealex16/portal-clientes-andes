@@ -16,6 +16,7 @@ export default function InvoicesPage() {
     <section>
       <h1 className="page__title">Facturas</h1>
       <p className="page__lead">Documentos emitidos a tu empresa y su estado de pago.</p>
+      <p>Los montos están expresados en pesos chilenos (CLP).</p>
       <div className="panel panel--table">
         <table className="table">
           <thead>
