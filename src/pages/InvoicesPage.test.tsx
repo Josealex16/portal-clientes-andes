@@ -24,6 +24,18 @@ afterEach(() => {
 })
 
 describe('InvoicesPage', () => {
+  it('muestra la aclaración de moneda inmediatamente después de la introducción y antes de la tabla', () => {
+    render(<InvoicesPage />)
+
+    const introduction = screen.getByText('Documentos emitidos a tu empresa y su estado de pago.')
+    const disclosure = screen.getByText('Los montos están expresados en pesos chilenos (CLP).')
+    const table = screen.getByRole('table')
+
+    expect(disclosure).toHaveTextContent('Los montos están expresados en pesos chilenos (CLP).')
+    expect(introduction.nextElementSibling).toBe(disclosure)
+    expect(disclosure.nextElementSibling).toBe(table.parentElement)
+  })
+
   it('muestra tres días junto a la fecha en la celda Vencimiento de la tabla', () => {
     render(<InvoicesPage />)
 
