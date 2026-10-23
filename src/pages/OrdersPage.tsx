@@ -1,7 +1,11 @@
-import { formatCurrency, formatDate, orders } from '../data/sampleData'
+import { formatCurrency, formatDate, orders, type Order } from '../data/sampleData'
 import StatusBadge from '../components/StatusBadge'
 
-export default function OrdersPage() {
+interface OrdersPageProps {
+  ordersToDisplay?: Order[]
+}
+
+export default function OrdersPage({ ordersToDisplay = orders }: OrdersPageProps) {
   return (
     <section>
       <h1 className="page__title">Pedidos</h1>
@@ -19,7 +23,7 @@ export default function OrdersPage() {
             </tr>
           </thead>
           <tbody>
-            {[...orders].sort((a, b) => a.date.localeCompare(b.date)).map((order) => (
+            {[...ordersToDisplay].sort((a, b) => b.date.localeCompare(a.date)).map((order) => (
               <tr key={order.id}>
                 <td>{order.id}</td>
                 <td>{formatDate(order.date)}</td>
