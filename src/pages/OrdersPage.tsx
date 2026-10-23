@@ -18,7 +18,7 @@ export default function OrdersPage() {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {[...orders].sort((a, b) => a.date.localeCompare(b.date)).map((order) => (
               <tr key={order.id}>
                 <td>{order.id}</td>
                 <td>{formatDate(order.date)}</td>
