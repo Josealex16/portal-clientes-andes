@@ -12,6 +12,7 @@ describe('LoginPage', () => {
 
     expect(disclosure.tagName).toBe('P')
     expect(subtitle.nextElementSibling).toBe(disclosure)
+    expect(disclosure.querySelector('a')).toBeNull()
   })
 
   it('muestra el aviso de registro exitoso cuando llega en el estado de navegación', () => {
@@ -26,6 +27,7 @@ describe('LoginPage', () => {
 
   it('muestra el formulario de ingreso', () => {
     renderApp('/login')
+    expect(screen.getByText('Si olvidaste tu contraseña, escribe a soporte@andes.example.', { exact: true })).toBeInTheDocument()
     expect(screen.getByLabelText('Correo electrónico')).toBeInTheDocument()
     expect(screen.getByLabelText('Contraseña')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Ingresar' })).toBeInTheDocument()
