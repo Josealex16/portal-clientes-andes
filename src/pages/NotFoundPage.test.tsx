@@ -6,9 +6,13 @@ import { renderApp } from '../test/renderApp'
 describe('NotFoundPage', () => {
   it('muestra el acceso a Soporte debajo del enlace de inicio en una ruta inexistente', () => {
     login('demo@andes.example', 'Demo1234')
-    renderApp('/pagina-inexistente')
+    renderApp('/facturas-viejas')
 
-    expect(screen.getByRole('heading', { name: 'Página no encontrada' })).toBeInTheDocument()
+    const heading = screen.getByRole('heading', { name: 'Página no encontrada' })
+    const requestedPath = screen.getByText('No encontramos /facturas-viejas')
+    expect(heading).toBeInTheDocument()
+    expect(heading.nextElementSibling).toBe(requestedPath)
+    expect(screen.getByText('La dirección que buscas no existe o fue movida.')).toBeInTheDocument()
 
     const homeLink = screen.getByRole('link', { name: 'Volver al inicio' })
     const supportLink = screen.getByRole('link', { name: 'Ir a Soporte' })
