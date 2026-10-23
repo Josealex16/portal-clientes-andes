@@ -14,3 +14,4 @@
 - Mostrar la ruta solicitada en la página de error 404.
 - Mostrar la dirección de la oficina en el bloque «Contacto directo» de Soporte.
 - Mostrar primero los pedidos más recientes en la tabla de Pedidos.
+- Informar en Novedades de Inicio sobre la atención presencial en la oficina de Providencia.

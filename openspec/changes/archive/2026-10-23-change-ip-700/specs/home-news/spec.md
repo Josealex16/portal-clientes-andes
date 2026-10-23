@@ -1,3 +1,7 @@
+## Purpose
+
+La capacidad home-news presenta avisos informativos a las personas que consultan Inicio, incluido el horario de atención presencial de la oficina de Providencia.
+
 ## ADDED Requirements
 
 ### Requirement: Aviso de atención presencial en Novedades
