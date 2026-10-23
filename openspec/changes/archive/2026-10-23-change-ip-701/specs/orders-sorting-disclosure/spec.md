@@ -1,3 +1,6 @@
+## Purpose
+Esta capacidad permite a las personas conocer el criterio cronológico con que se presenta el historial de pedidos.
+
 ## ADDED Requirements
 
 ### Requirement: Aclaración del orden de los pedidos

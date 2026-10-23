@@ -1,4 +1,9 @@
-## ADDED Requirements
+# invoice-currency-disclosure Specification
+
+## Purpose
+Esta capacidad permite a las personas identificar que los montos mostrados en la página Facturas están expresados en pesos chilenos.
+
+## Requirements
 
 ### Requirement: Aclaración de moneda de las facturas
 La página Facturas SHALL mostrar debajo de su frase de introducción y antes de la tabla el párrafo «Los montos están expresados en pesos chilenos (CLP).».
