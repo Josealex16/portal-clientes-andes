@@ -21,12 +21,22 @@ describe('ProfilePage', () => {
       </AuthProvider>,
     )
 
+    const introduction = screen.getByText('Datos de tu cuenta en el portal.', {
+      exact: true,
+      selector: 'p',
+    })
+    const purposeParagraph = screen.getByText('Estos datos se usan para emitir tus facturas.', {
+      exact: true,
+      selector: 'p',
+    })
     const panel = screen.getByText('Nombre').closest('.panel')
     const contactParagraph = screen.getByText(
       'Para cambiar tus datos escribe a soporte@andes.example.',
       { exact: true, selector: 'p' },
     )
 
+    expect(introduction.nextElementSibling).toBe(purposeParagraph)
+    expect(purposeParagraph.nextElementSibling).toBe(panel)
     expect(panel).toContainElement(screen.getByText('Ana Pérez', { exact: true }))
     expect(panel).toContainElement(screen.getByText('ana@andes.example', { exact: true }))
     expect(panel).toContainElement(screen.getByText('Andes', { exact: true }))
