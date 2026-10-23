@@ -10,9 +10,13 @@ describe('NotFoundPage', () => {
 
     const heading = screen.getByRole('heading', { name: 'Página no encontrada' })
     const requestedPath = screen.getByText('No encontramos /facturas-viejas')
+    const introduction = screen.getByText('La dirección que buscas no existe o fue movida.')
+    const returnGuidance = screen.getByText('Vuelve al inicio desde el menú lateral.')
     expect(heading).toBeInTheDocument()
     expect(heading.nextElementSibling).toBe(requestedPath)
-    expect(screen.getByText('La dirección que buscas no existe o fue movida.')).toBeInTheDocument()
+    expect(introduction).toBeInTheDocument()
+    expect(introduction.nextElementSibling).toBe(returnGuidance)
+    expect(returnGuidance).toBeInTheDocument()
 
     const homeLink = screen.getByRole('link', { name: 'Volver al inicio' })
     const supportLink = screen.getByRole('link', { name: 'Ir a Soporte' })

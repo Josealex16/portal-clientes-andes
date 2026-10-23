@@ -8,6 +8,7 @@ export default function NotFoundPage() {
       <h1 className="page__title">Página no encontrada</h1>
       <p>No encontramos {pathname}</p>
       <p className="page__lead">La dirección que buscas no existe o fue movida.</p>
+      <p>Vuelve al inicio desde el menú lateral.</p>
       <div>
         <Link to="/">Volver al inicio</Link>
       </div>
