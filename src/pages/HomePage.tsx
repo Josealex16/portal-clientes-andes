@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <section>
       <h1 className="page__title">Hola, {user?.name.split(' ')[0]}</h1>
-      <p className="page__lead">Este es el resumen de tu cuenta al día de hoy.</p>
+      <p className="page__lead">Este es el resumen de tu cuenta al día de hoy. Los montos incluyen IVA.</p>
 
       <div className="cards">
         <article className="card">

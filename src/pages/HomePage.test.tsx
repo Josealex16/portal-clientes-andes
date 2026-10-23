@@ -15,6 +15,14 @@ function renderHomePage() {
 }
 
 describe('HomePage', () => {
+  it('muestra la aclaración exacta de IVA en la introducción', () => {
+    renderHomePage()
+
+    expect(
+      screen.getByText('Este es el resumen de tu cuenta al día de hoy. Los montos incluyen IVA.'),
+    ).toBeInTheDocument()
+  })
+
   it('muestra las novedades existentes en orden seguidas del aviso de Providencia', () => {
     renderHomePage()
 
@@ -32,6 +40,10 @@ describe('HomePage', () => {
 
   it('conserva las tarjetas de Inicio y los destinos de sus enlaces', () => {
     renderHomePage()
+
+    expect(
+      screen.getByText('Este es el resumen de tu cuenta al día de hoy. Los montos incluyen IVA.'),
+    ).toBeInTheDocument()
 
     const ordersCard = screen.getByRole('heading', { name: 'Pedidos abiertos' }).closest('article')
     if (!ordersCard) throw new Error('No se encontró la tarjeta Pedidos abiertos')
