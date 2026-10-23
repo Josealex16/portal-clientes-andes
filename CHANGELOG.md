@@ -16,3 +16,4 @@
 - Mostrar primero los pedidos más recientes en la tabla de Pedidos.
 - Informar en Novedades de Inicio sobre la atención presencial en la oficina de Providencia.
 - Aclarar en Pedidos el orden de los pedidos y en Facturas la moneda de los montos.
+- Aclarar en Inicio que los montos del resumen incluyen IVA.
