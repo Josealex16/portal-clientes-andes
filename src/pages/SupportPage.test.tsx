@@ -3,6 +3,18 @@ import { describe, expect, it } from 'vitest'
 import SupportPage from './SupportPage'
 
 describe('SupportPage', () => {
+  it('muestra el correo de facturación en el bloque Contacto directo', () => {
+    render(<SupportPage />)
+
+    const contactHeading = screen.getByRole('heading', { name: 'Contacto directo' })
+    const contactPanel = contactHeading.parentElement
+    const billingEmailLine = screen.getByText('Correo de facturación: facturacion@andes.example', {
+      exact: true,
+    })
+
+    expect(contactPanel).toContainElement(billingEmailLine)
+  })
+
   it('muestra el horario de atención en el bloque Contacto directo', () => {
     render(<SupportPage />)
 
