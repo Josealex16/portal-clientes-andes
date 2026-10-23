@@ -5,6 +5,15 @@ import { renderApp } from '../test/renderApp'
 import { getSession } from '../services/authService'
 
 describe('LoginPage', () => {
+  it('muestra la ayuda para recuperar la contraseña inmediatamente después del subtítulo', () => {
+    renderApp('/login')
+    const subtitle = screen.getByText('Ingresa con tu cuenta para revisar tus pedidos y facturas.')
+    const disclosure = screen.getByText('Si olvidaste tu contraseña, escribe a soporte@andes.example.', { exact: true })
+
+    expect(disclosure.tagName).toBe('P')
+    expect(subtitle.nextElementSibling).toBe(disclosure)
+  })
+
   it('muestra el aviso de registro exitoso cuando llega en el estado de navegación', () => {
     renderApp('/login', undefined, { registrationSuccess: true })
     expect(screen.getByRole('status')).toHaveTextContent('Tu cuenta se creó correctamente.')

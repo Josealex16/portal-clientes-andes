@@ -67,6 +67,7 @@ export default function LoginPage() {
           <h1 className="auth__title">Portal de Clientes Andes</h1>
         </div>
         <p className="auth__subtitle">Ingresa con tu cuenta para revisar tus pedidos y facturas.</p>
+        <p>Si olvidaste tu contraseña, escribe a soporte@andes.example.</p>
 
         {registrationSuccess && (
           <div className="banner banner--success" role="status">
