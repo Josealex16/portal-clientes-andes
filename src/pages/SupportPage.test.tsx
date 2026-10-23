@@ -26,4 +26,16 @@ describe('SupportPage', () => {
 
     expect(contactPanel).toContainElement(hoursLine)
   })
+
+  it('muestra la dirección de la oficina en el bloque Contacto directo', () => {
+    render(<SupportPage />)
+
+    const contactHeading = screen.getByRole('heading', { name: 'Contacto directo' })
+    const contactPanel = contactHeading.parentElement
+    const officeAddressLine = screen.getByText('Oficina: Av. Providencia 1234, Santiago', {
+      exact: true,
+    })
+
+    expect(contactPanel).toContainElement(officeAddressLine)
+  })
 })

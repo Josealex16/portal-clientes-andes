@@ -23,6 +23,7 @@ export default function SupportPage() {
         <p>Correo: soporte@andes.example</p>
         <p>Correo de facturación: facturacion@andes.example</p>
         <p>Teléfono: +56 2 2555 0100</p>
+        <p>Oficina: Av. Providencia 1234, Santiago</p>
         <p>Horario de atención: lunes a viernes de 09:00 a 18:00</p>
       </div>
     </section>
