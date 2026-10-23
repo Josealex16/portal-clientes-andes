@@ -33,7 +33,10 @@ describe('InvoicesPage', () => {
 
     expect(disclosure).toHaveTextContent('Los montos están expresados en pesos chilenos (CLP).')
     expect(introduction.nextElementSibling).toBe(disclosure)
-    expect(disclosure.nextElementSibling).toBe(table.parentElement)
+    expect(disclosure.nextElementSibling).toHaveTextContent(
+      'Si una factura no aparece, escribe a soporte@andes.example.',
+    )
+    expect(disclosure.nextElementSibling?.nextElementSibling).toBe(table.parentElement)
   })
 
   it('muestra tres días junto a la fecha en la celda Vencimiento de la tabla', () => {
