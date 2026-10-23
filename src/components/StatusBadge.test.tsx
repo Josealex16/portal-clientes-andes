@@ -6,7 +6,7 @@ describe('StatusBadge', () => {
   it.each([
     ['Vencida', 'badge--danger'],
     ['Pagada', 'badge--success'],
-    ['Pendiente', 'badge--rota'],
+    ['Pendiente', 'badge--warning'],
     ['En preparación', 'badge--warning'],
     ['En camino', 'badge--info'],
     ['Entregado', 'badge--success'],
