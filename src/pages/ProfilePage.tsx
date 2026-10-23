@@ -7,6 +7,7 @@ export default function ProfilePage() {
     <section>
       <h1 className="page__title">Mi perfil</h1>
       <p className="page__lead">Datos de tu cuenta en el portal.</p>
+      <p>Estos datos se usan para emitir tus facturas.</p>
       <div className="panel">
         <dl className="details">
           <div>
