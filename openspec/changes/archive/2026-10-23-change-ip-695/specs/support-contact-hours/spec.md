@@ -1,3 +1,7 @@
+## Purpose
+
+Esta capacidad permite que las personas que consultan Soporte conozcan el horario de atención directamente en el bloque de contacto.
+
 ## ADDED Requirements
 
 ### Requirement: Horario visible en Contacto directo

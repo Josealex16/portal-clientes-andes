@@ -9,3 +9,4 @@
 - Mostrar los días restantes para el vencimiento próximo de las facturas pendientes.
 - Distinguir las filas pares y resaltar al pasar el cursor las filas de las tablas de Pedidos y Facturas.
 - Añadir un enlace directo a Soporte desde la página de error 404.
+- Mostrar el horario de atención en el bloque «Contacto directo» de Soporte.
