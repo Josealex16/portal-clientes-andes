@@ -11,3 +11,4 @@
 - Añadir un enlace directo a Soporte desde la página de error 404.
 - Mostrar el horario de atención en el bloque «Contacto directo» de Soporte.
 - Mostrar el correo de facturación en el bloque «Contacto directo» de Soporte.
+- Mostrar la ruta solicitada en la página de error 404.
