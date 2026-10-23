@@ -13,3 +13,4 @@
 - Mostrar el correo de facturación en el bloque «Contacto directo» de Soporte.
 - Mostrar la ruta solicitada en la página de error 404.
 - Mostrar la dirección de la oficina en el bloque «Contacto directo» de Soporte.
+- Mostrar primero los pedidos más recientes en la tabla de Pedidos.

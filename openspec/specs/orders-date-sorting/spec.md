@@ -1,4 +1,9 @@
-## ADDED Requirements
+# orders-date-sorting Specification
+
+## Purpose
+Esta capacidad permite consultar el historial de Pedidos desde el registro más reciente hasta el más antiguo, conservando intactos el contenido y la presentación de cada fila.
+
+## Requirements
 
 ### Requirement: Historial de pedidos del más reciente al más antiguo
 La tabla de Pedidos SHALL mostrar sus filas en orden descendente por fecha, desde la más reciente hasta la más antigua, sin cambiar las columnas, los formatos ni los datos de ejemplo.
