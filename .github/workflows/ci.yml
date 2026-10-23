@@ -27,3 +27,4 @@ jobs:
       - run: npm run lint
       - run: npm test -- --run
       - run: npm run build
+# lote 7c: cambio humano de prueba en el flujo de CI

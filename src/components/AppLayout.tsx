@@ -20,6 +20,9 @@ export default function AppLayout() {
           <Outlet />
         </main>
       </div>
+      <footer className="layout__footer">
+        Soporte: soporte@andes.example · Lunes a viernes de 09:00 a 18:00
+      </footer>
     </div>
   )
 }
