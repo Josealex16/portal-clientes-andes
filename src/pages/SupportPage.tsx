@@ -5,6 +5,7 @@ export default function SupportPage() {
     <section>
       <h1 className="page__title">Soporte</h1>
       <p className="page__lead">Resolvemos tus dudas sobre pedidos, facturas y tu cuenta.</p>
+      <p>Horario de atención: lunes a viernes, de 9:00 a 18:00.</p>
 
       <div className="panel">
         <h2 className="panel__title">Preguntas frecuentes</h2>
