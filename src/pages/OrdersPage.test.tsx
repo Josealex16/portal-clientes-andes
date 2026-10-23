@@ -42,6 +42,18 @@ const expectedOrders = [
 ]
 
 describe('OrdersPage', () => {
+  it('muestra la aclaración del orden inmediatamente después de la introducción y antes de la tabla', () => {
+    render(<OrdersPage />)
+
+    const introduction = screen.getByText('Historial reciente de pedidos de tu empresa.')
+    const disclosure = screen.getByText('Los pedidos se ordenan del más reciente al más antiguo.')
+    const table = screen.getByRole('table')
+
+    expect(disclosure).toHaveTextContent('Los pedidos se ordenan del más reciente al más antiguo.')
+    expect(introduction.nextElementSibling).toBe(disclosure)
+    expect(disclosure.nextElementSibling).toBe(table.parentElement)
+  })
+
   it('muestra los pedidos en orden cronológico descendente', () => {
     render(<OrdersPage />)
 

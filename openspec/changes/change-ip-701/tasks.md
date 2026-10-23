@@ -1,6 +1,6 @@
 ## 1. Pedidos
 
-- [ ] 1.1 Agregar en `src/pages/OrdersPage.tsx` el párrafo «Los pedidos se ordenan del más reciente al más antiguo.» inmediatamente después de «Historial reciente de pedidos de tu empresa.» y antes de la tabla; ampliar `src/pages/OrdersPage.test.tsx` con una prueba unitaria de componente (Vitest y Testing Library) que compruebe el texto exacto y esa ubicación en el contenido renderizado, manteniendo las columnas, datos y orden de la tabla cubiertos por las pruebas existentes; pasan `npm run build`, `npm run lint`, `npm test` y `npm test -- --run`.
+- [x] 1.1 Agregar en `src/pages/OrdersPage.tsx` el párrafo «Los pedidos se ordenan del más reciente al más antiguo.» inmediatamente después de «Historial reciente de pedidos de tu empresa.» y antes de la tabla; ampliar `src/pages/OrdersPage.test.tsx` con una prueba unitaria de componente (Vitest y Testing Library) que compruebe el texto exacto y esa ubicación en el contenido renderizado, manteniendo las columnas, datos y orden de la tabla cubiertos por las pruebas existentes; pasan `npm run build`, `npm run lint`, `npm test` y `npm test -- --run`.
 
 ## 2. Facturas
 

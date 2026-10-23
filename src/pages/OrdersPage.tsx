@@ -6,6 +6,7 @@ export default function OrdersPage() {
     <section>
       <h1 className="page__title">Pedidos</h1>
       <p className="page__lead">Historial reciente de pedidos de tu empresa.</p>
+      <p>Los pedidos se ordenan del más reciente al más antiguo.</p>
       <div className="panel panel--table">
         <table className="table">
           <thead>
