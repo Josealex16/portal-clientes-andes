@@ -1,0 +1,3 @@
+## 1. Página de Pedidos
+
+- [ ] 1.1 Actualizar `src/pages/OrdersPage.tsx` para añadir al final del `tbody` la fila «Total de pedidos», con la etiqueta en las primeras tres columnas, la suma de todos los `orders` de `src/data/sampleData.ts` formateada mediante `formatCurrency` en la cuarta columna y la quinta celda conservada; agregar `src/pages/OrdersPage.test.tsx` con una prueba unitaria Vitest/Testing Library que compruebe que, después de las cinco filas, aparece la etiqueta y el monto `formatCurrency(5_479_000)` (5.479.000 pesos chilenos), sin filtrar pedidos ni modificar otras pantallas o estilos; pasan `npm run build`, `npm run lint` y `npm test` (el repositorio verifica los tests con `npm test -- --run`).
