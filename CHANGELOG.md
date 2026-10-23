@@ -18,3 +18,4 @@
 - Aclarar en Pedidos el orden de los pedidos y en Facturas la moneda de los montos.
 - Aclarar en Inicio que los montos del resumen incluyen IVA.
 - Mostrar en rojo el importe de «Saldo pendiente» en Inicio.
+- Mostrar el contacto y horario de Soporte debajo del contenido de las páginas autenticadas.
