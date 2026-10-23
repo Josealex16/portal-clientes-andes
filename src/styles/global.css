@@ -232,7 +232,7 @@ p {
 }
 
 .table__num {
-  text-align: right !important;
+  text-align: left !important;
 }
 
 .badge {

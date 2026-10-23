@@ -5,7 +5,7 @@ import { formatCurrency, invoices, orders } from '../data/sampleData'
 export default function HomePage() {
   const { user } = useAuth()
   const openOrders = orders.filter((o) => o.status !== 'Entregado').length
-  const pendingInvoices = invoices.filter((i) => i.status !== 'Pagada')
+  const pendingInvoices = invoices.filter((i) => i.status === 'Pendiente')
   const pendingTotal = pendingInvoices.reduce((sum, i) => sum + i.amount, 0)
 
   return (

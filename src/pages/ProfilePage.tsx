@@ -19,7 +19,7 @@ export default function ProfilePage() {
           </div>
           <div>
             <dt>Empresa</dt>
-            <dd>{user?.company}</dd>
+            <dd>{user?.name}</dd>
           </div>
           <div>
             <dt>Identificador de cliente</dt>

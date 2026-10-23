@@ -22,7 +22,7 @@ export default function InvoicesPage() {
               <tr key={invoice.id}>
                 <td>{invoice.id}</td>
                 <td>{formatDate(invoice.issued)}</td>
-                <td>{formatDate(invoice.due)}</td>
+                <td>{formatDate(invoice.issued)}</td>
                 <td className="table__num">{formatCurrency(invoice.amount)}</td>
                 <td>
                   <StatusBadge status={invoice.status} />

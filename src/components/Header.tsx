@@ -19,8 +19,8 @@ export default function Header() {
       </div>
       <div className="header__user">
         <div className="header__identity">
-          <span className="header__name">{user?.name}</span>
-          <span className="header__company">{user?.company}</span>
+          <span className="header__name">{user?.company}</span>
+          <span className="header__company">{user?.name}</span>
         </div>
         <button type="button" className="btn btn--ghost" onClick={handleSignOut}>
           Cerrar sesión
