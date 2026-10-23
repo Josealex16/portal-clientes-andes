@@ -1,4 +1,9 @@
-## ADDED Requirements
+# profile-data-purpose Specification
+
+## Purpose
+Esta capacidad explica a las personas qué uso tienen los datos de cuenta que consultan en Mi perfil.
+
+## Requirements
 
 ### Requirement: Propósito de los datos del perfil
 Mi perfil SHALL mostrar el párrafo «Estos datos se usan para emitir tus facturas.» inmediatamente después de su frase de introducción y conservar los datos de la cuenta mostrados.
