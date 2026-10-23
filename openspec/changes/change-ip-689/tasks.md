@@ -1,0 +1,3 @@
+## 1. Estilos de las tablas
+
+- [ ] 1.1 Añadir únicamente en `src/styles/global.css` las reglas para las filas de `tbody` de `.table`: filas pares con `background: var(--color-surface-alt, #f7f9fa)` y hover posterior con `#eaf1f4`, sin modificar componentes ni datos; verificación manual: abrir Pedidos y Facturas con cuatro filas de datos y comprobar que las filas 1 y 3 conservan el fondo normal, las filas 2 y 4 usan `--color-surface-alt` o `#f7f9fa` cuando no está definida, y el encabezado no se alterna; pasar el cursor sobre una fila par y una impar y comprobar que cada una usa `#eaf1f4` y, al retirar el cursor, recupera respectivamente su fondo alterno o normal (sin `e2e_browser`; `jsdom` no evalúa layout); `npm run build`, `npm run lint` y `npm test -- --run` pasan.
