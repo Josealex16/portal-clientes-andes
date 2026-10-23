@@ -27,6 +27,7 @@ export default function ProfilePage() {
           </div>
         </dl>
       </div>
+      <p>Para cambiar tus datos escribe a soporte@andes.example.</p>
     </section>
   )
 }
