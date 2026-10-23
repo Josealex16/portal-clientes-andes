@@ -1,4 +1,9 @@
-## ADDED Requirements
+# auth-page-disclosures Specification
+
+## Purpose
+Esta capacidad comunica a las personas que ingresan o se registran información breve de ayuda y de uso de sus datos en las páginas públicas correspondientes.
+
+## Requirements
 
 ### Requirement: Aclaración de ayuda en ingreso
 La página de ingreso SHALL mostrar el párrafo exacto «Si olvidaste tu contraseña, escribe a soporte@andes.example.» inmediatamente debajo de su subtítulo.
