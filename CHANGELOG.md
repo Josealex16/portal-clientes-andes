@@ -18,6 +18,7 @@
 - Aclarar en Pedidos el orden de los pedidos y en Facturas la moneda de los montos.
 - Aclarar en Inicio que los montos del resumen incluyen IVA.
 - Mostrar en rojo el importe de «Saldo pendiente» en Inicio.
+- Mostrar el horario de atención de Soporte debajo de la introducción.
 - Mostrar el contacto y horario de Soporte debajo del contenido de las páginas autenticadas.
 - Aclarar en Ingreso cómo pedir ayuda con la contraseña y en Registro el uso de los datos.
 - Indicar en Facturas el contacto de soporte para consultar por una factura que no aparece.
