@@ -75,6 +75,7 @@ export default function RegisterPage() {
           <h1 className="auth__title">Crear cuenta</h1>
         </div>
         <p className="auth__subtitle">Registra a tu empresa en el Portal de Clientes Andes.</p>
+        <p>Tus datos se usan solo para gestionar tu cuenta.</p>
 
         {formError && (
           <div className="banner banner--error" role="alert">

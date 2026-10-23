@@ -26,6 +26,15 @@ afterEach(() => {
 })
 
 describe('RegisterPage', () => {
+  it('muestra la aclaración sobre el uso de los datos inmediatamente después del subtítulo', () => {
+    renderApp('/registro')
+    const subtitle = screen.getByText('Registra a tu empresa en el Portal de Clientes Andes.')
+    const disclosure = screen.getByText('Tus datos se usan solo para gestionar tu cuenta.', { exact: true })
+
+    expect(disclosure.tagName).toBe('P')
+    expect(subtitle.nextElementSibling).toBe(disclosure)
+  })
+
   it('rechaza contraseñas distintas y no registra una cuenta', async () => {
     const user = userEvent.setup()
     renderApp('/registro')
