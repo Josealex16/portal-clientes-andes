@@ -1,0 +1,3 @@
+## 1. Inicio
+
+- [ ] 1.1 Añadir en `src/pages/HomePage.tsx` el párrafo exacto «Para pedir ayuda, entra a Soporte desde el menú.» inmediatamente después de la introducción, sin añadir un enlace ni modificar los demás bloques; ampliar `src/pages/HomePage.test.tsx` con una prueba unitaria que cubra el escenario «Consultar cómo pedir ayuda sin alterar los demás bloques de Inicio»: comprueba el texto y su posición tras la introducción, que las tres tarjetas conservan sus etiquetas y los enlaces «Ver pedidos» a `/pedidos`, «Ver facturas» a `/facturas` y «¿Dudas con tu saldo?» a `/soporte`, y que «Novedades» conserva sus cuatro textos en el orden especificado; `npm run build`, `npm run lint` y `npm test -- --run` pasan.
