@@ -27,6 +27,10 @@ describe('contenido de InvoicesPage', () => {
     ]
     render(<InvoicesPage />)
 
+    expect(
+      screen.getByText('Si una factura no aparece, escribe a soporte@andes.example.'),
+    ).toBeInTheDocument()
+
     const table = screen.getByRole('table')
     const rows = within(table).getAllByRole('row')
     const dataRows = rows.slice(1)
