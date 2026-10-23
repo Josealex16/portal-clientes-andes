@@ -4,4 +4,4 @@
 
 ## 2. Registro
 
-- [ ] 2.1 Agregar en `src/pages/RegisterPage.tsx` el párrafo «Tus datos se usan solo para gestionar tu cuenta.» inmediatamente después del subtítulo, sin alterar el formulario; ampliar `src/pages/RegisterPage.test.tsx` con una prueba unitaria de Vitest y Testing Library que abra `/registro` y compruebe que el párrafo exacto queda inmediatamente después del subtítulo. El escenario «Consultar el uso de los datos al registrarse» queda cubierto; `npm run build`, `npm run lint`, `npm test` y `npm test -- --run` pasan.
+- [x] 2.1 Agregar en `src/pages/RegisterPage.tsx` el párrafo «Tus datos se usan solo para gestionar tu cuenta.» inmediatamente después del subtítulo, sin alterar el formulario; ampliar `src/pages/RegisterPage.test.tsx` con una prueba unitaria de Vitest y Testing Library que abra `/registro` y compruebe que el párrafo exacto queda inmediatamente después del subtítulo. El escenario «Consultar el uso de los datos al registrarse» queda cubierto; `npm run build`, `npm run lint`, `npm test` y `npm test -- --run` pasan.
