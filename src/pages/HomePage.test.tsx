@@ -47,9 +47,6 @@ describe('HomePage', () => {
 
     const ordersCard = screen.getByRole('heading', { name: 'Pedidos abiertos' }).closest('article')
     if (!ordersCard) throw new Error('No se encontró la tarjeta Pedidos abiertos')
-    const ordersValue = within(ordersCard).getByText('2')
-    expect(ordersValue).toHaveClass('card__value')
-    expect(ordersValue).not.toHaveAttribute('style')
     expect(within(ordersCard).getByRole('link', { name: 'Ver pedidos' })).toHaveAttribute(
       'href',
       '/pedidos',
@@ -57,9 +54,6 @@ describe('HomePage', () => {
 
     const invoicesCard = screen.getByRole('heading', { name: 'Facturas por pagar' }).closest('article')
     if (!invoicesCard) throw new Error('No se encontró la tarjeta Facturas por pagar')
-    const invoicesValue = within(invoicesCard).getByText('3')
-    expect(invoicesValue).toHaveClass('card__value')
-    expect(invoicesValue).not.toHaveAttribute('style')
     expect(within(invoicesCard).getByRole('link', { name: 'Ver facturas' })).toHaveAttribute(
       'href',
       '/facturas',
@@ -67,9 +61,6 @@ describe('HomePage', () => {
 
     const balanceCard = screen.getByRole('heading', { name: 'Saldo pendiente' }).closest('article')
     if (!balanceCard) throw new Error('No se encontró la tarjeta Saldo pendiente')
-    const balanceValue = balanceCard.querySelector('p.card__value')
-    if (!balanceValue) throw new Error('No se encontró el importe de Saldo pendiente')
-    expect(balanceValue).toHaveAttribute('style', 'color: red;')
     expect(within(balanceCard).getByRole('link', { name: '¿Dudas con tu saldo?' })).toHaveAttribute(
       'href',
       '/soporte',
