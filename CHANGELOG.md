@@ -23,3 +23,4 @@
 - Aclarar en Ingreso cómo pedir ayuda con la contraseña y en Registro el uso de los datos.
 - Indicar en Facturas el contacto de soporte para consultar por una factura que no aparece.
 - Indicar en la página 404 que se puede volver al inicio desde el menú lateral.
+- Explicar en Mi perfil que los datos de la cuenta se usan para emitir facturas.
