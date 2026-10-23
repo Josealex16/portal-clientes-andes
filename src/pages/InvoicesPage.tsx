@@ -1,7 +1,17 @@
 import { formatCurrency, formatDate, invoices } from '../data/sampleData'
 import StatusBadge from '../components/StatusBadge'
 
+function daysUntilDue(due: string, today: Date): number {
+  const [year, month, day] = due.split('-').map(Number)
+  const dueCalendarDay = Date.UTC(year, month - 1, day)
+  const todayCalendarDay = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate())
+
+  return (dueCalendarDay - todayCalendarDay) / 86400000
+}
+
 export default function InvoicesPage() {
+  const today = new Date()
+
   return (
     <section>
       <h1 className="page__title">Facturas</h1>
@@ -18,17 +28,27 @@ export default function InvoicesPage() {
             </tr>
           </thead>
           <tbody>
-            {invoices.map((invoice) => (
-              <tr key={invoice.id}>
-                <td>{invoice.id}</td>
-                <td>{formatDate(invoice.issued)}</td>
-                <td>{formatDate(invoice.due)}</td>
-                <td className="table__num">{formatCurrency(invoice.amount)}</td>
-                <td>
-                  <StatusBadge status={invoice.status} />
-                </td>
-              </tr>
-            ))}
+            {invoices.map((invoice) => {
+              const daysRemaining =
+                invoice.status === 'Pendiente' ? daysUntilDue(invoice.due, today) : null
+
+              return (
+                <tr key={invoice.id}>
+                  <td>{invoice.id}</td>
+                  <td>{formatDate(invoice.issued)}</td>
+                  <td>
+                    {formatDate(invoice.due)}
+                    {daysRemaining !== null && daysRemaining >= 0 && daysRemaining <= 3 && (
+                      <span> Vence en {daysRemaining} días</span>
+                    )}
+                  </td>
+                  <td className="table__num">{formatCurrency(invoice.amount)}</td>
+                  <td>
+                    <StatusBadge status={invoice.status} />
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>
