@@ -22,6 +22,7 @@ export default function SupportPage() {
         <h2 className="panel__title">Contacto directo</h2>
         <p>Correo: soporte@andes.example</p>
         <p>Teléfono: +56 2 2555 0100</p>
+        <p>Horario de atención: lunes a viernes de 09:00 a 18:00</p>
       </div>
     </section>
   )
