@@ -1,0 +1,3 @@
+## 1. Página 404
+
+- [ ] 1.1 En `src/pages/NotFoundPage.tsx`, obtener `pathname` con `useLocation` de React Router y mostrar debajo del título el texto literal «No encontramos {pathname}» como contenido React, sin incluir query ni fragmento, conservando el texto introductorio y los enlaces actuales. Actualizar la prueba unitaria Vitest/Testing Library en `src/pages/NotFoundPage.test.tsx`: abrir `/facturas-viejas` mediante `renderApp` y comprobar que debajo del título aparece exactamente «No encontramos /facturas-viejas», junto con la regresión de los enlaces existentes. Pasan las pruebas unitarias (`npm test -- --run`) y `npm run build`, `npm run lint` y `npm test`.
