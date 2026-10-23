@@ -26,7 +26,7 @@ export default function HomePage() {
         </article>
         <article className="card">
           <h2 className="card__label">Saldo pendiente</h2>
-          <p className="card__value">{formatCurrency(pendingTotal)}</p>
+          <p className="card__value" style={{ color: 'red' }}>{formatCurrency(pendingTotal)}</p>
           <Link to="/soporte">¿Dudas con tu saldo?</Link>
         </article>
       </div>
