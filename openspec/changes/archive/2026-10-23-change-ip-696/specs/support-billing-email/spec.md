@@ -1,3 +1,6 @@
+## Purpose
+Permite que las personas con consultas sobre facturas encuentren el correo específico de facturación en el bloque de contacto de la página Soporte.
+
 ## ADDED Requirements
 
 ### Requirement: Correo de facturación visible en Contacto directo

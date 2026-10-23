@@ -1,5 +1,7 @@
 # Horario de atención de Soporte
 
-En la página Soporte, el bloque «Contacto directo» muestra el horario «Horario de atención: lunes a viernes de 09:00 a 18:00» junto al correo y el teléfono.
+En la página Soporte, el bloque «Contacto directo» muestra el horario «Horario de atención: lunes a viernes de 09:00 a 18:00» junto a los correos y el teléfono. Para consultas sobre facturas, también muestra «Correo de facturación: facturacion@andes.example».
 
 Por ejemplo, al abrir Soporte y consultar «Contacto directo», se ve la línea «Horario de atención: lunes a viernes de 09:00 a 18:00» dentro del bloque.
+
+En el mismo bloque, la línea «Correo de facturación: facturacion@andes.example» identifica el canal para consultas sobre facturas.
