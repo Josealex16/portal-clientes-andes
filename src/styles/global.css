@@ -227,6 +227,14 @@ p {
   color: var(--color-muted);
 }
 
+.table tbody tr:nth-child(even) {
+  background: var(--color-surface-alt, #f7f9fa);
+}
+
+.table tbody tr:hover {
+  background: #eaf1f4;
+}
+
 .table tbody tr:last-child td {
   border-bottom: none;
 }
