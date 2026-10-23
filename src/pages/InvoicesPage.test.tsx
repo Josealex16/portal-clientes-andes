@@ -74,4 +74,16 @@ describe('InvoicesPage', () => {
     expect(dueCell).not.toHaveTextContent('Vence en')
     expect(invoices[4].due).toBe('2026-10-26')
   })
+
+  it('limita todos los avisos de vencimiento a la tabla de Facturas', () => {
+    render(<InvoicesPage />)
+
+    const table = screen.getByRole('table')
+    const notices = screen.getAllByText(/^Vence en \d+ días$/)
+
+    expect(notices.length).toBeGreaterThan(0)
+    for (const notice of notices) {
+      expect(table).toContainElement(notice)
+    }
+  })
 })
