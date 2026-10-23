@@ -1,0 +1,3 @@
+## 1. Perfil
+
+- [ ] 1.1 Actualizar el encabezado en `src/pages/ProfilePage.tsx` para mostrar «Mi perfil» seguido del `id` del usuario autenticado entre paréntesis, reutilizando `useAuth` y sin cambiar otras pantallas, el contenido restante de Perfil ni los estilos. Añadir `src/pages/ProfilePage.test.tsx` con una prueba unitaria (Vitest/Testing Library) que use una sesión de prueba con `id` `u-1001` y compruebe el escenario «Título de perfil con el identificador del usuario de ejemplo»: el encabezado muestra exactamente «Mi perfil (u-1001)». `npm test -- --run`, `npm run build` y `npm run lint` pasan.
