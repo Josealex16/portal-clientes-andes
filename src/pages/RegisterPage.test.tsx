@@ -35,6 +35,18 @@ describe('RegisterPage', () => {
     expect(subtitle.nextElementSibling).toBe(disclosure)
   })
 
+  it('conserva los controles del formulario junto con la aclaración sobre los datos', () => {
+    renderApp('/registro')
+
+    expect(screen.getByText('Tus datos se usan solo para gestionar tu cuenta.', { exact: true })).toBeInTheDocument()
+    expect(screen.getByLabelText('Nombre completo')).toBeInTheDocument()
+    expect(screen.getByLabelText('Correo electrónico')).toBeInTheDocument()
+    expect(screen.getByLabelText('Contraseña')).toBeInTheDocument()
+    expect(screen.getByLabelText('Confirmar contraseña')).toBeInTheDocument()
+    expect(screen.getByRole('checkbox', { name: 'Acepto los términos y condiciones del servicio' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Crear cuenta' })).toBeInTheDocument()
+  })
+
   it('rechaza contraseñas distintas y no registra una cuenta', async () => {
     const user = userEvent.setup()
     renderApp('/registro')
