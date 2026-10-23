@@ -1,9 +1,9 @@
 import { render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { formatCurrency, orders } from '../data/sampleData'
+import { formatCurrency, orders, type Order } from '../data/sampleData'
 import OrdersPage from './OrdersPage'
 
-const expectedOrders = [
+const expectedOrders: Order[] = [
   {
     id: 'PED-2041',
     date: '2026-09-28',
@@ -69,6 +69,21 @@ describe('OrdersPage', () => {
     ])
     expect(within(rows[0]).getByText('PED-2041')).toBeInTheDocument()
     expect(within(rows[rows.length - 1]).getByText('PED-2003')).toBeInTheDocument()
+  })
+
+  it('ordena por fecha descendente cuando los pedidos llegan en orden inverso', () => {
+    render(<OrdersPage ordersToDisplay={[...expectedOrders].reverse()} />)
+
+    const table = screen.getByRole('table')
+    const rows = within(table).getAllByRole('row').slice(1)
+
+    expect(rows.map((row) => within(row).getAllByRole('cell')[0].textContent)).toEqual([
+      'PED-2041',
+      'PED-2037',
+      'PED-2029',
+      'PED-2018',
+      'PED-2003',
+    ])
   })
 
   it('conserva las columnas, el formato de fecha y los valores de cada pedido sin mutar orders', () => {
