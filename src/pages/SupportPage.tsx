@@ -25,6 +25,7 @@ export default function SupportPage() {
         <p>Teléfono: +56 2 2555 0100</p>
         <p>Oficina: Av. Providencia 1234, Santiago</p>
         <p>Horario de atención: lunes a viernes de 09:00 a 18:00</p>
+        <p>Tiempo de respuesta: hasta 24 horas hábiles.</p>
       </div>
     </section>
   )
