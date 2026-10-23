@@ -1,3 +1,7 @@
+## Purpose
+
+Esta capacidad permite distinguir visualmente las filas de datos y reconocer la fila activa al pasar el cursor en las tablas de Pedidos y Facturas.
+
 ## ADDED Requirements
 
 ### Requirement: Fondos alternos y resaltado de filas de tabla
