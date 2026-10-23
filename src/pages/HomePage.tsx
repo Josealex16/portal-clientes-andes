@@ -6,6 +6,7 @@ export default function HomePage() {
   const { user } = useAuth()
   const openOrders = orders.filter((o) => o.status !== 'Entregado').length
   const pendingInvoices = invoices.filter((i) => i.status !== 'Pagada')
+  const overdueInvoices = invoices.filter((i) => i.status === 'Vencida')
   const pendingTotal = pendingInvoices.reduce((sum, i) => sum + i.amount, 0)
 
   return (
@@ -22,6 +23,11 @@ export default function HomePage() {
         <article className="card">
           <h2 className="card__label">Facturas por pagar</h2>
           <p className="card__value">{pendingInvoices.length}</p>
+          <Link to="/facturas">Ver facturas</Link>
+        </article>
+        <article className="card">
+          <h2 className="card__label">Facturas vencidas</h2>
+          <p className="card__value">{overdueInvoices.length}</p>
           <Link to="/facturas">Ver facturas</Link>
         </article>
         <article className="card">
