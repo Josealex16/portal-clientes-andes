@@ -27,3 +27,4 @@
 - Explicar en Mi perfil que los datos de la cuenta se usan para emitir facturas.
 - Aclarar en Registro el uso de los datos y conservar sus controles.
 - Indicar en Facturas que los documentos se descargan en formato PDF.
+- Indicar en Pedidos el contacto para consultar el estado de un envío.

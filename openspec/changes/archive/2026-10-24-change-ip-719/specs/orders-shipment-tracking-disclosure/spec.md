@@ -1,3 +1,7 @@
+## Purpose
+
+Esta capacidad informa a las personas que consultan Pedidos cómo solicitar el estado de un envío sin alterar el historial de pedidos existente.
+
 ## ADDED Requirements
 
 ### Requirement: Nota para consultar el seguimiento de envíos
