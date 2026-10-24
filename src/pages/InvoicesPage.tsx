@@ -54,6 +54,7 @@ export default function InvoicesPage() {
           </tbody>
         </table>
       </div>
+      <p>Los documentos se descargan en formato PDF.</p>
     </section>
   )
 }

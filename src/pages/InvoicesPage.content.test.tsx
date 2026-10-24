@@ -17,6 +17,16 @@ describe('contenido de InvoicesPage', () => {
     expect(supportMessage.nextElementSibling).toBe(table.parentElement)
   })
 
+  it('muestra la aclaración del formato inmediatamente después de la tabla', () => {
+    render(<InvoicesPage />)
+
+    const table = screen.getByRole('table')
+    const disclosure = screen.getByText('Los documentos se descargan en formato PDF.')
+
+    expect(table.parentElement?.nextElementSibling).toBe(disclosure)
+    expect(disclosure.parentElement?.lastElementChild).toBe(disclosure)
+  })
+
   it('conserva las columnas y los cinco registros de facturas con sus datos', () => {
     const expectedInvoices = [
       { id: 'FAC-8812', issued: '2026-09-30', due: '2026-10-30', amount: 1280000, status: 'Pendiente' },
@@ -30,6 +40,7 @@ describe('contenido de InvoicesPage', () => {
     expect(
       screen.getByText('Si una factura no aparece, escribe a soporte@andes.example.'),
     ).toBeInTheDocument()
+    expect(screen.getByText('Los documentos se descargan en formato PDF.')).toBeInTheDocument()
 
     const table = screen.getByRole('table')
     const rows = within(table).getAllByRole('row')
