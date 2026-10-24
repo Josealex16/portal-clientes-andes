@@ -1,3 +1,7 @@
+## Purpose
+
+Esta capacidad informa a las personas que consultan Facturas del formato de descarga de los documentos sin alterar la tabla ni sus datos.
+
 ## ADDED Requirements
 
 ### Requirement: Aclaración del formato de descarga de facturas
