@@ -37,6 +37,7 @@ export default function OrdersPage({ ordersToDisplay = orders }: OrdersPageProps
           </tbody>
         </table>
       </div>
+      <p>Para consultar un envío, escribe a soporte@andes.example.</p>
     </section>
   )
 }
