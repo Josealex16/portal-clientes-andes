@@ -71,6 +71,17 @@ describe('OrdersPage', () => {
     expect(within(rows[rows.length - 1]).getByText('PED-2003')).toBeInTheDocument()
   })
 
+  it('muestra la nota exacta inmediatamente después de la tabla y como último contenido', () => {
+    render(<OrdersPage />)
+
+    const table = screen.getByRole('table')
+    const note = screen.getByText('Para consultar un envío, escribe a soporte@andes.example.', { exact: true })
+
+    expect(table.parentElement?.nextElementSibling).toBe(note)
+    expect(note.nextElementSibling).toBeNull()
+    expect(note.parentElement?.lastElementChild).toBe(note)
+  })
+
   it('ordena por fecha descendente cuando los pedidos llegan en orden inverso', () => {
     render(<OrdersPage ordersToDisplay={[...expectedOrders].reverse()} />)
 
@@ -94,6 +105,8 @@ describe('OrdersPage', () => {
 
     const table = screen.getByRole('table')
     const rows = within(table).getAllByRole('row')
+    expect(screen.getByText('Para consultar un envío, escribe a soporte@andes.example.', { exact: true }))
+      .toBeInTheDocument()
 
     expect(within(rows[0]).getAllByRole('columnheader').map((header) => header.textContent)).toEqual([
       'N°',
