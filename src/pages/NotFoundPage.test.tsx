@@ -50,6 +50,7 @@ describe('NotFoundPage', () => {
     ).toBeTruthy()
     expect(homeLink.parentElement?.nextElementSibling).toBe(supportLink.parentElement)
     expect(supportLink.parentElement?.nextElementSibling).toBe(contact)
+    expect(contact.tagName).toBe('P')
     expect(contact.parentElement?.lastElementChild).toBe(contact)
   })
 })
