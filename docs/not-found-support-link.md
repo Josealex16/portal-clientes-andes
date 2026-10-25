@@ -4,4 +4,6 @@ Cuando se muestra «Página no encontrada» para una dirección inexistente, la 
 
 Debajo de la frase introductoria «La dirección que buscas no existe o fue movida.», la página muestra «Vuelve al inicio desde el menú lateral.».
 
+Después del enlace «Ir a Soporte», la página muestra como último elemento de contenido el párrafo «Si el enlace falla, escribe a soporte@andes.example.».
+
 Por ejemplo, al abrir `/facturas-viejas`, debajo del título se muestra «No encontramos /facturas-viejas». Al abrir `/pagina-inexistente`, se muestran los enlaces «Volver al inicio» y «Ir a Soporte» en ese orden; el destino de este último es `/soporte`.
