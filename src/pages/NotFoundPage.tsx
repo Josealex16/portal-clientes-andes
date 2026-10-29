@@ -15,6 +15,9 @@ export default function NotFoundPage() {
       <div>
         <Link to="/soporte">Ir a Soporte</Link>
       </div>
+      <div>
+        <Link to="/">Back to home</Link>
+      </div>
       <p>Si el enlace falla, escribe a soporte@andes.example.</p>
     </section>
   )

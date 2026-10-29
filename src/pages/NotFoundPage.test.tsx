@@ -20,12 +20,15 @@ describe('NotFoundPage', () => {
 
     const homeLink = screen.getByRole('link', { name: 'Volver al inicio' })
     const supportLink = screen.getByRole('link', { name: 'Ir a Soporte' })
+    const backToHomeLink = screen.getByRole('link', { name: 'Back to home' })
     expect(homeLink).toHaveAttribute('href', '/')
     expect(supportLink).toHaveAttribute('href', '/soporte')
+    expect(backToHomeLink).toHaveAttribute('href', '/')
     expect(
       homeLink.compareDocumentPosition(supportLink) & Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy()
     expect(homeLink.parentElement?.nextElementSibling).toBe(supportLink.parentElement)
+    expect(supportLink.parentElement?.nextElementSibling).toBe(backToHomeLink.parentElement)
   })
 
   it('Mostrar el contacto como último elemento de la página 404', () => {
@@ -38,6 +41,7 @@ describe('NotFoundPage', () => {
     const returnGuidance = screen.getByText('Vuelve al inicio desde el menú lateral.')
     const homeLink = screen.getByRole('link', { name: 'Volver al inicio' })
     const supportLink = screen.getByRole('link', { name: 'Ir a Soporte' })
+    const backToHomeLink = screen.getByRole('link', { name: 'Back to home' })
     const contact = screen.getByText('Si el enlace falla, escribe a soporte@andes.example.')
 
     expect(heading).toBeInTheDocument()
@@ -45,12 +49,27 @@ describe('NotFoundPage', () => {
     expect(introduction.nextElementSibling).toBe(returnGuidance)
     expect(homeLink).toHaveAttribute('href', '/')
     expect(supportLink).toHaveAttribute('href', '/soporte')
+    expect(backToHomeLink).toHaveAttribute('href', '/')
     expect(
       homeLink.compareDocumentPosition(supportLink) & Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy()
     expect(homeLink.parentElement?.nextElementSibling).toBe(supportLink.parentElement)
-    expect(supportLink.parentElement?.nextElementSibling).toBe(contact)
+    expect(supportLink.parentElement?.nextElementSibling).toBe(backToHomeLink.parentElement)
+    expect(backToHomeLink.parentElement?.nextElementSibling).toBe(contact)
     expect(contact.tagName).toBe('P')
     expect(contact.parentElement?.lastElementChild).toBe(contact)
+  })
+
+  it('Volver al inicio con el nuevo enlace', () => {
+    login('demo@andes.example', 'Demo1234')
+    renderApp('/facturas-viejas')
+
+    const supportLink = screen.getByRole('link', { name: 'Ir a Soporte' })
+    const backToHomeLink = screen.getByRole('link', { name: 'Back to home' })
+
+    expect(backToHomeLink).toHaveAttribute('href', '/')
+    expect(
+      supportLink.compareDocumentPosition(backToHomeLink) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy()
   })
 })
