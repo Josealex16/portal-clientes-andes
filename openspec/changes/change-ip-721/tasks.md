@@ -1,6 +1,6 @@
 ## 1. Pedidos (IP-722)
 
-- [ ] 1.1 IP-722: En `src/pages/OrdersPage.tsx`, deriva el contador de `ordersToDisplay` y muestra el título como `Pedidos (N)` sin cambiar el orden ni las filas de la tabla; amplía `src/pages/OrdersPage.test.tsx` con pruebas unitarias Vitest/Testing Library para que PED-2041 y PED-2037 den `Pedidos (2)` y sean las dos filas visibles sin PED-2029, una lista vacía dé `Pedidos (0)` y ninguna fila de pedido, y una lista filtrada recibida por la página cuente solo sus dos resultados sin añadir filtros; `npm run build`, `npm run lint` y `npm test -- --run` pasan.
+- [x] 1.1 IP-722: En `src/pages/OrdersPage.tsx`, deriva el contador de `ordersToDisplay` y muestra el título como `Pedidos (N)` sin cambiar el orden ni las filas de la tabla; amplía `src/pages/OrdersPage.test.tsx` con pruebas unitarias Vitest/Testing Library para que PED-2041 y PED-2037 den `Pedidos (2)` y sean las dos filas visibles sin PED-2029, una lista vacía dé `Pedidos (0)` y ninguna fila de pedido, y una lista filtrada recibida por la página cuente solo sus dos resultados sin añadir filtros; `npm run build`, `npm run lint` y `npm test -- --run` pasan.
 
 ## 2. Facturas (IP-723)
 

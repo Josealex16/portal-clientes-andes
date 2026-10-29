@@ -55,7 +55,7 @@ describe('AppLayout', () => {
     login('demo@andes.example', 'Demo1234')
     renderApp('/')
     await user.click(screen.getByRole('link', { name: 'Pedidos' }))
-    expect(screen.getByRole('heading', { name: 'Pedidos' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Pedidos (5)' })).toBeInTheDocument()
     await user.click(screen.getByRole('link', { name: 'Mi perfil' }))
     expect(screen.getByRole('heading', { name: 'Mi perfil' })).toBeInTheDocument()
   })
@@ -70,7 +70,7 @@ describe('AppLayout', () => {
 
   it.each([
     ['/', 'Hola, Camila'],
-    ['/pedidos', 'Pedidos'],
+    ['/pedidos', 'Pedidos (5)'],
     ['/facturas', 'Facturas'],
     ['/soporte', 'Soporte'],
     ['/perfil', 'Mi perfil'],

@@ -12,7 +12,7 @@ describe('AppLayout - pie de contacto', () => {
 
   it.each([
     ['/', 'Hola, Camila'],
-    ['/pedidos', 'Pedidos'],
+    ['/pedidos', 'Pedidos (5)'],
     ['/facturas', 'Facturas'],
     ['/soporte', 'Soporte'],
     ['/perfil', 'Mi perfil'],
