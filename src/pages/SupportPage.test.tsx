@@ -3,6 +3,21 @@ import { describe, expect, it } from 'vitest'
 import SupportPage from './SupportPage'
 
 describe('SupportPage', () => {
+  it('muestra la introducción y el enlace de soporte inmediatamente debajo del título', () => {
+    render(<SupportPage />)
+
+    const title = screen.getByRole('heading', { name: 'Soporte' })
+    const introduction = screen.getByText(
+      'Need help? We usually reply within one business day.',
+      { exact: true },
+    )
+    const emailLink = screen.getByRole('link', { name: 'Email support' })
+
+    expect(title.nextElementSibling).toBe(introduction)
+    expect(introduction.nextElementSibling).toBe(emailLink)
+    expect(emailLink).toHaveAttribute('href', 'mailto:support@example.com')
+  })
+
   it('muestra el nuevo horario inmediatamente después de la introducción y antes de Preguntas frecuentes', () => {
     render(<SupportPage />)
 

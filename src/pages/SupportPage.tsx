@@ -4,6 +4,8 @@ export default function SupportPage() {
   return (
     <section>
       <h1 className="page__title">Soporte</h1>
+      <p>Need help? We usually reply within one business day.</p>
+      <a href="mailto:support@example.com">Email support</a>
       <p className="page__lead">Resolvemos tus dudas sobre pedidos, facturas y tu cuenta.</p>
       <p>Horario de atención: lunes a viernes, de 9:00 a 18:00.</p>
 
