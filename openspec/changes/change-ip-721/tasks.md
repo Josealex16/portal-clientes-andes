@@ -8,7 +8,7 @@
 
 ## 3. Mi perfil (IP-724)
 
-- [ ] 3.1 IP-724: En `src/pages/ProfilePage.tsx`, conserva el párrafo «Estos datos se usan para emitir tus facturas.» inmediatamente después de la introducción y añade debajo del valor de Correo electrónico «El correo electrónico se usa para iniciar sesión y recibir avisos sobre pedidos y facturas.», enlazando el valor a esa ayuda con `aria-describedby` sin asociarla a otros campos; amplía `src/pages/ProfilePage.test.tsx` con pruebas unitarias Vitest/Testing Library que comprueben el orden del párrafo existente, los mismos datos visibles (Ana Pérez, ana@andes.example, Andes y C-204), la ayuda bajo el correo, su referencia accesible y que Nombre, Empresa e Identificador de cliente no muestran esa ayuda; `npm run build`, `npm run lint` y `npm test -- --run` pasan.
+- [x] 3.1 IP-724: En `src/pages/ProfilePage.tsx`, conserva el párrafo «Estos datos se usan para emitir tus facturas.» inmediatamente después de la introducción y añade debajo del valor de Correo electrónico «El correo electrónico se usa para iniciar sesión y recibir avisos sobre pedidos y facturas.», enlazando el valor a esa ayuda con `aria-describedby` sin asociarla a otros campos; amplía `src/pages/ProfilePage.test.tsx` con pruebas unitarias Vitest/Testing Library que comprueben el orden del párrafo existente, los mismos datos visibles (Ana Pérez, ana@andes.example, Andes y C-204), la ayuda bajo el correo, su referencia accesible y que Nombre, Empresa e Identificador de cliente no muestran esa ayuda; `npm run build`, `npm run lint` y `npm test -- --run` pasan.
 
 ## 4. Soporte (IP-725)
 

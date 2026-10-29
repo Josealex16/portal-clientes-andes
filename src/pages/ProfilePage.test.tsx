@@ -30,6 +30,12 @@ describe('ProfilePage', () => {
       selector: 'p',
     })
     const panel = screen.getByText('Nombre').closest('.panel')
+    const emailValue = screen.getByText('ana@andes.example', { exact: true })
+    const emailDetails = emailValue.closest('dd')
+    const emailPurpose = screen.getByText(
+      'El correo electrónico se usa para iniciar sesión y recibir avisos sobre pedidos y facturas.',
+      { exact: true, selector: 'p' },
+    )
     const contactParagraph = screen.getByText(
       'Para cambiar tus datos escribe a soporte@andes.example.',
       { exact: true, selector: 'p' },
@@ -41,6 +47,15 @@ describe('ProfilePage', () => {
     expect(panel).toContainElement(screen.getByText('ana@andes.example', { exact: true }))
     expect(panel).toContainElement(screen.getByText('Andes', { exact: true }))
     expect(panel).toContainElement(screen.getByText('C-204', { exact: true }))
+    expect(emailDetails).toHaveAttribute('aria-describedby', 'email-purpose')
+    expect(emailDetails?.lastElementChild).toBe(emailPurpose)
+    for (const label of ['Nombre', 'Empresa', 'Identificador de cliente']) {
+      const field = screen.getByText(label, { exact: true }).parentElement
+      const value = field?.querySelector('dd')
+
+      expect(value).not.toHaveAttribute('aria-describedby')
+      expect(value).not.toContainElement(emailPurpose)
+    }
     expect(panel?.nextElementSibling).toBe(contactParagraph)
   })
 })
