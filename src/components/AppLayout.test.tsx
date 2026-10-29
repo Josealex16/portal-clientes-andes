@@ -46,7 +46,7 @@ describe('AppLayout', () => {
     )
     expect(within(menu).getByRole('link', { name: 'Pedidos' })).not.toHaveAttribute('aria-current')
 
-    expect(screen.getByRole('heading', { name: 'Facturas' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Facturas (5)' })).toBeInTheDocument()
     expect(screen.getByRole('banner')).toBeInTheDocument()
   })
 
@@ -71,7 +71,7 @@ describe('AppLayout', () => {
   it.each([
     ['/', 'Hola, Camila'],
     ['/pedidos', 'Pedidos (5)'],
-    ['/facturas', 'Facturas'],
+    ['/facturas', 'Facturas (5)'],
     ['/soporte', 'Soporte'],
     ['/perfil', 'Mi perfil'],
     ['/ruta-inexistente', 'Página no encontrada'],
