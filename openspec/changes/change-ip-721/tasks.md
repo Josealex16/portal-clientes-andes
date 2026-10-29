@@ -4,7 +4,7 @@
 
 ## 2. Facturas (IP-723)
 
-- [ ] 2.1 IP-723: En `src/pages/InvoicesPage.tsx`, deriva el contador de la misma colección `invoices` que genera la tabla y muestra el título como `Facturas (N)` sin cambiar filas ni columnas; amplía `src/pages/InvoicesPage.test.tsx` con pruebas unitarias Vitest/Testing Library usando colecciones de prueba para que FAC-8812 y FAC-8790 den `Facturas (2)` y sean las dos filas presentadas, y una lista vacía dé `Facturas (0)` sin filas de factura; `npm run build`, `npm run lint` y `npm test -- --run` pasan.
+- [x] 2.1 IP-723: En `src/pages/InvoicesPage.tsx`, deriva el contador de la misma colección `invoices` que genera la tabla y muestra el título como `Facturas (N)` sin cambiar filas ni columnas; amplía `src/pages/InvoicesPage.test.tsx` con pruebas unitarias Vitest/Testing Library usando colecciones de prueba para que FAC-8812 y FAC-8790 den `Facturas (2)` y sean las dos filas presentadas, y una lista vacía dé `Facturas (0)` sin filas de factura; `npm run build`, `npm run lint` y `npm test -- --run` pasan.
 
 ## 3. Mi perfil (IP-724)
 

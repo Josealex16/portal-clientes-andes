@@ -3,6 +3,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { invoices } from '../data/sampleData'
 import InvoicesPage from './InvoicesPage'
 
+const initialInvoices = [...invoices]
+
 vi.mock('../data/sampleData', async (importOriginal) => ({
   ...(await importOriginal<typeof import('../data/sampleData')>()),
   invoices: [
@@ -21,9 +23,41 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.useRealTimers()
+  invoices.splice(0, invoices.length, ...initialInvoices)
 })
 
 describe('InvoicesPage', () => {
+  it('muestra el contador de las dos facturas presentadas', () => {
+    invoices.splice(
+      0,
+      invoices.length,
+      { id: 'FAC-8812', issued: '2026-09-30', due: '2026-10-30', amount: 1280000, status: 'Pendiente' },
+      { id: 'FAC-8790', issued: '2026-09-22', due: '2026-10-22', amount: 864000, status: 'Pendiente' },
+    )
+
+    render(<InvoicesPage />)
+
+    const table = screen.getByRole('table')
+    const rows = within(table).getAllByRole('row').slice(1)
+
+    expect(screen.getByRole('heading', { name: 'Facturas (2)' })).toBeInTheDocument()
+    expect(rows.map((row) => within(row).getAllByRole('cell')[0].textContent)).toEqual([
+      'FAC-8812',
+      'FAC-8790',
+    ])
+  })
+
+  it('muestra cero y ninguna fila de factura cuando la lista está vacía', () => {
+    invoices.splice(0, invoices.length)
+
+    render(<InvoicesPage />)
+
+    const table = screen.getByRole('table')
+
+    expect(screen.getByRole('heading', { name: 'Facturas (0)' })).toBeInTheDocument()
+    expect(within(table).getAllByRole('row')).toHaveLength(1)
+  })
+
   it('muestra la aclaración de moneda inmediatamente después de la introducción y antes de la tabla', () => {
     render(<InvoicesPage />)
 

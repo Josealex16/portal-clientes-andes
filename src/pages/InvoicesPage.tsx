@@ -14,7 +14,7 @@ export default function InvoicesPage() {
 
   return (
     <section>
-      <h1 className="page__title">Facturas</h1>
+      <h1 className="page__title">Facturas ({invoices.length})</h1>
       <p className="page__lead">Documentos emitidos a tu empresa y su estado de pago.</p>
       <p>Los montos están expresados en pesos chilenos (CLP).</p>
       <p>Si una factura no aparece, escribe a soporte@andes.example.</p>
