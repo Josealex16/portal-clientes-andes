@@ -1,3 +1,6 @@
+## Purpose
+Esta capacidad muestra cuántos pedidos aparecen en la tabla para que la persona pueda identificar el tamaño de la lista visible.
+
 ## ADDED Requirements
 
 ### Requirement: Contador de pedidos visibles

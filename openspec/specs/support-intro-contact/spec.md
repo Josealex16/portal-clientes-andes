@@ -1,4 +1,9 @@
-## ADDED Requirements
+# support-intro-contact Specification
+
+## Purpose
+Esta capacidad presenta una orientación inicial en Soporte y ofrece un enlace de correo para que las personas puedan contactar directamente.
+
+## Requirements
 
 ### Requirement: Introducción y correo de contacto en Soporte
 La página Soporte SHALL mostrar inmediatamente debajo del título el párrafo exacto «Need help? We usually reply within one business day.» y debajo de ese párrafo un enlace visible con la etiqueta «Email support» y el destino `mailto:support@example.com`. La página SHALL conservar el contenido que ya mostraba.
