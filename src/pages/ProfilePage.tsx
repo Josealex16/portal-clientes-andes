@@ -16,7 +16,13 @@ export default function ProfilePage() {
           </div>
           <div>
             <dt>Correo electrónico</dt>
-            <dd>{user?.email}</dd>
+            <dd aria-describedby="email-purpose">
+              {user?.email}
+              <p id="email-purpose">
+                El correo electrónico se usa para iniciar sesión y recibir avisos sobre pedidos y
+                facturas.
+              </p>
+            </dd>
           </div>
           <div>
             <dt>Empresa</dt>
