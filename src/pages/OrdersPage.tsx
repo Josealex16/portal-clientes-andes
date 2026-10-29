@@ -8,7 +8,7 @@ interface OrdersPageProps {
 export default function OrdersPage({ ordersToDisplay = orders }: OrdersPageProps) {
   return (
     <section>
-      <h1 className="page__title">Pedidos</h1>
+      <h1 className="page__title">Pedidos ({ordersToDisplay.length})</h1>
       <p className="page__lead">Historial reciente de pedidos de tu empresa.</p>
       <p>Los pedidos se ordenan del más reciente al más antiguo.</p>
       <div className="panel panel--table">

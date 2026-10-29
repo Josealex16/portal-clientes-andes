@@ -97,6 +97,43 @@ describe('OrdersPage', () => {
     ])
   })
 
+  it('muestra el contador y solo los pedidos visibles', () => {
+    render(<OrdersPage ordersToDisplay={expectedOrders.slice(0, 2)} />)
+
+    const table = screen.getByRole('table')
+    const rows = within(table).getAllByRole('row').slice(1)
+
+    expect(screen.getByRole('heading', { name: 'Pedidos (2)' })).toBeInTheDocument()
+    expect(rows.map((row) => within(row).getAllByRole('cell')[0].textContent)).toEqual([
+      'PED-2041',
+      'PED-2037',
+    ])
+    expect(within(table).queryByText('PED-2029')).not.toBeInTheDocument()
+  })
+
+  it('muestra cero y ninguna fila de pedido cuando la lista está vacía', () => {
+    render(<OrdersPage ordersToDisplay={[]} />)
+
+    const table = screen.getByRole('table')
+
+    expect(screen.getByRole('heading', { name: 'Pedidos (0)' })).toBeInTheDocument()
+    expect(within(table).getAllByRole('row')).toHaveLength(1)
+  })
+
+  it('cuenta solo los resultados filtrados que recibe la página', () => {
+    const filteredOrders = expectedOrders.slice(0, 2)
+    render(<OrdersPage ordersToDisplay={filteredOrders} />)
+
+    const table = screen.getByRole('table')
+    const rows = within(table).getAllByRole('row').slice(1)
+
+    expect(screen.getByRole('heading', { name: 'Pedidos (2)' })).toBeInTheDocument()
+    expect(rows.map((row) => within(row).getAllByRole('cell')[0].textContent)).toEqual([
+      'PED-2041',
+      'PED-2037',
+    ])
+  })
+
   it('conserva las columnas, el formato de fecha y los valores de cada pedido sin mutar orders', () => {
     const originalOrders = [...orders]
     Object.freeze(orders)
