@@ -31,3 +31,4 @@
 - Indicar en Pedidos el contacto para consultar el estado de un envío.
 - Añadir «Back to home» a la página 404 para volver al inicio.
 - Mostrar el número de filas visibles en Pedidos y Facturas, explicar el uso del correo en Mi perfil y ofrecer contacto por correo en Soporte.
+- Mostrar un mensaje cuando la lista visible de Pedidos está vacía, conservando el contador y la información de la página.
