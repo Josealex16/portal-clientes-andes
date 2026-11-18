@@ -111,13 +111,21 @@ describe('OrdersPage', () => {
     expect(within(table).queryByText('PED-2029')).not.toBeInTheDocument()
   })
 
-  it('muestra cero y ninguna fila de pedido cuando la lista está vacía', () => {
+  it('muestra el mensaje vacío en lugar de la tabla y conserva el contenido informativo', () => {
     render(<OrdersPage ordersToDisplay={[]} />)
 
-    const table = screen.getByRole('table')
+    const introduction = screen.getByText('Historial reciente de pedidos de tu empresa.', { exact: true })
+    const disclosure = screen.getByText('Los pedidos se ordenan del más reciente al más antiguo.', { exact: true })
+    const emptyMessage = screen.getByText('Todavía no hay pedidos.', { exact: true })
+    const note = screen.getByText('Para consultar un envío, escribe a soporte@andes.example.', { exact: true })
 
     expect(screen.getByRole('heading', { name: 'Pedidos (0)' })).toBeInTheDocument()
-    expect(within(table).getAllByRole('row')).toHaveLength(1)
+    expect(screen.queryByRole('table')).not.toBeInTheDocument()
+    expect(introduction.nextElementSibling).toBe(disclosure)
+    expect(disclosure.nextElementSibling).toBe(emptyMessage)
+    expect(emptyMessage.nextElementSibling).toBe(note)
+    expect(note.nextElementSibling).toBeNull()
+    expect(note.parentElement?.lastElementChild).toBe(note)
   })
 
   it('cuenta solo los resultados filtrados que recibe la página', () => {
