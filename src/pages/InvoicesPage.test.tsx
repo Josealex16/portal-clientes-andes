@@ -47,15 +47,35 @@ describe('InvoicesPage', () => {
     ])
   })
 
-  it('muestra cero y ninguna fila de factura cuando la lista está vacía', () => {
+  it('muestra el mensaje vacío en lugar de la tabla y conserva el contenido informativo', () => {
     invoices.splice(0, invoices.length)
 
     render(<InvoicesPage />)
 
-    const table = screen.getByRole('table')
+    const introduction = screen.getByText(
+      'Documentos emitidos a tu empresa y su estado de pago.',
+      { exact: true },
+    )
+    const currencyDisclosure = screen.getByText(
+      'Los montos están expresados en pesos chilenos (CLP).',
+      { exact: true },
+    )
+    const supportMessage = screen.getByText(
+      'Si una factura no aparece, escribe a soporte@andes.example.',
+      { exact: true },
+    )
+    const emptyMessage = screen.getByText('Todavía no hay facturas.', { exact: true })
+    const pdfDisclosure = screen.getByText('Los documentos se descargan en formato PDF.', {
+      exact: true,
+    })
 
     expect(screen.getByRole('heading', { name: 'Facturas (0)' })).toBeInTheDocument()
-    expect(within(table).getAllByRole('row')).toHaveLength(1)
+    expect(screen.queryByRole('table')).not.toBeInTheDocument()
+    expect(introduction.nextElementSibling).toBe(currencyDisclosure)
+    expect(currencyDisclosure.nextElementSibling).toBe(supportMessage)
+    expect(supportMessage.nextElementSibling).toBe(emptyMessage)
+    expect(emptyMessage.nextElementSibling).toBe(pdfDisclosure)
+    expect(pdfDisclosure.nextElementSibling).toBeNull()
   })
 
   it('muestra la aclaración de moneda inmediatamente después de la introducción y antes de la tabla', () => {
