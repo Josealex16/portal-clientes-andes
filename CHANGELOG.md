@@ -33,3 +33,4 @@
 - Mostrar el número de filas visibles en Pedidos y Facturas, explicar el uso del correo en Mi perfil y ofrecer contacto por correo en Soporte.
 - Mostrar un mensaje cuando la lista visible de Pedidos está vacía, conservando el contador y la información de la página.
 - Mostrar un mensaje cuando no hay facturas, en lugar de la tabla vacía.
+- Mostrar los totales de Facturas con separador de miles y dos decimales.
