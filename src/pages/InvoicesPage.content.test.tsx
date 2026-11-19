@@ -65,7 +65,7 @@ describe('contenido de InvoicesPage', () => {
 
       expect(cells[1]).toHaveTextContent(formatDate(invoice.issued))
       expect(cells[2]).toHaveTextContent(formatDate(invoice.due))
-      expect(cells[3]).toHaveTextContent(expectedAmounts[index])
+      expect(cells[3].textContent?.replace(/^\D+/u, '')).toBe(expectedAmounts[index])
       expect(cells[4]).toHaveTextContent(invoice.status)
     })
   })
@@ -82,7 +82,9 @@ describe('contenido de InvoicesPage', () => {
       render(<InvoicesPage />)
 
       const row = screen.getByRole('row', { name: /FAC-FRACTIONAL/ })
-      expect(within(row).getAllByRole('cell')[3]).toHaveTextContent('1.234,50')
+      expect(within(row).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe(
+        '1.234,50',
+      )
       expect(screen.getByText('Los montos están expresados en pesos chilenos (CLP).')).toBeInTheDocument()
     } finally {
       invoices.splice(0, invoices.length, ...originalInvoices)

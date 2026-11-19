@@ -45,8 +45,12 @@ describe('InvoicesPage', () => {
       'FAC-8812',
       'FAC-8790',
     ])
-    expect(within(rows[0]).getAllByRole('cell')[3]).toHaveTextContent('1.280.000,00')
-    expect(within(rows[1]).getAllByRole('cell')[3]).toHaveTextContent('864.000,00')
+    expect(within(rows[0]).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe(
+      '1.280.000,00',
+    )
+    expect(within(rows[1]).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe(
+      '864.000,00',
+    )
     expect(screen.getByText('Los montos están expresados en pesos chilenos (CLP).')).toBeInTheDocument()
   })
 
@@ -61,7 +65,7 @@ describe('InvoicesPage', () => {
 
     const row = screen.getByRole('row', { name: /FAC-FRACTIONAL/ })
 
-    expect(within(row).getAllByRole('cell')[3]).toHaveTextContent('1.234,50')
+    expect(within(row).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe('1.234,50')
     expect(screen.getByText('Los montos están expresados en pesos chilenos (CLP).')).toBeInTheDocument()
   })
 
