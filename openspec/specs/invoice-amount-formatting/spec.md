@@ -1,4 +1,9 @@
-## ADDED Requirements
+# invoice-amount-formatting Specification
+
+## Purpose
+Esta capacidad define cómo la página Facturas presenta los totales con separadores españoles y conserva la identificación de la moneda CLP.
+
+## Requirements
 
 ### Requirement: Formato español de los totales de Facturas
 La página Facturas SHALL mostrar la parte numérica del total de cada factura con punto como separador de miles cuando corresponda y exactamente dos decimales separados por coma, conservando la indicación existente de moneda CLP.

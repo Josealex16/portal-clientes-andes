@@ -57,6 +57,8 @@ En las tablas de Facturas, las fechas de Emisión y Vencimiento, y en la tabla d
 
 En la tabla de Facturas, una factura «Pendiente» con vencimiento entre hoy y los tres días calendario siguientes, inclusive, muestra junto a la fecha el aviso `Vence en N días`, donde N es la diferencia en días calendario. Por ejemplo, si hoy es el 23/10/2026, una factura que vence el 26/10/2026 muestra `Vence en 3 días` y una que vence hoy muestra `Vence en 0 días`. No se muestra el aviso para facturas vencidas, con vencimiento posterior al plazo ni con otro estado. El cálculo usa el día calendario local del dispositivo; el aviso solo aparece en la tabla de Facturas y no modifica la fecha ISO.
 
+En la tabla de Facturas, cada total se muestra con punto como separador de miles cuando corresponde y exactamente dos decimales separados por coma, manteniendo la indicación de pesos chilenos (CLP). Por ejemplo, `1234.5` se muestra como `1.234,50`; los importes de Pedidos e Inicio conservan su formato compartido actual.
+
 ## Estados de facturas y pedidos
 
 Las insignias distinguen los estados por tono: «Pagada» y «Entregado» usan éxito; «Pendiente» y «En preparación», advertencia; «Vencida», peligro; y «En camino», informativo.
