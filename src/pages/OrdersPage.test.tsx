@@ -171,6 +171,8 @@ describe('OrdersPage', () => {
         order.status,
       ]),
     )
+    expect(within(rows[1]).getAllByRole('cell')[3]).toHaveTextContent(/^\D*1\.280\.000$/u)
+    expect(within(rows[2]).getAllByRole('cell')[3]).toHaveTextContent(/^\D*864\.000$/u)
     expect(orders).toEqual(expectedOrders)
     expect(orders).toEqual(originalOrders)
   })

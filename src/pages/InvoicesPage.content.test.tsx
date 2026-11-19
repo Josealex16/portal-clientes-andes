@@ -1,6 +1,6 @@
 import { render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { formatCurrency, formatDate, invoices } from '../data/sampleData'
+import { formatDate, invoices } from '../data/sampleData'
 import InvoicesPage from './InvoicesPage'
 
 describe('contenido de InvoicesPage', () => {
@@ -59,13 +59,35 @@ describe('contenido de InvoicesPage', () => {
       dataRows.map((row) => within(row).getAllByRole('cell')[0].textContent),
     ).toEqual(expectedInvoices.map((invoice) => invoice.id))
 
+    const expectedAmounts = ['1.280.000,00', '864.000,00', '2.190.000,00', '410.000,00', '735.000,00']
     expectedInvoices.forEach((invoice, index) => {
       const cells = within(dataRows[index]).getAllByRole('cell')
 
       expect(cells[1]).toHaveTextContent(formatDate(invoice.issued))
       expect(cells[2]).toHaveTextContent(formatDate(invoice.due))
-      expect(cells[3]).toHaveTextContent(formatCurrency(invoice.amount))
+      expect(cells[3].textContent?.replace(/^\D+/u, '')).toBe(expectedAmounts[index])
       expect(cells[4]).toHaveTextContent(invoice.status)
     })
+  })
+
+  it('formatea 1234.5 como un importe fraccionario y conserva la indicación CLP', () => {
+    const originalInvoices = [...invoices]
+    invoices.splice(
+      0,
+      invoices.length,
+      { id: 'FAC-FRACTIONAL', issued: '2026-09-30', due: '2026-10-30', amount: 1234.5, status: 'Pendiente' },
+    )
+
+    try {
+      render(<InvoicesPage />)
+
+      const row = screen.getByRole('row', { name: /FAC-FRACTIONAL/ })
+      expect(within(row).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe(
+        '1.234,50',
+      )
+      expect(screen.getByText('Los montos están expresados en pesos chilenos (CLP).')).toBeInTheDocument()
+    } finally {
+      invoices.splice(0, invoices.length, ...originalInvoices)
+    }
   })
 })

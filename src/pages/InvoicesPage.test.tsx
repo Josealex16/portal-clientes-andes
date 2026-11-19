@@ -45,6 +45,28 @@ describe('InvoicesPage', () => {
       'FAC-8812',
       'FAC-8790',
     ])
+    expect(within(rows[0]).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe(
+      '1.280.000,00',
+    )
+    expect(within(rows[1]).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe(
+      '864.000,00',
+    )
+    expect(screen.getByText('Los montos están expresados en pesos chilenos (CLP).')).toBeInTheDocument()
+  })
+
+  it('muestra los importes fraccionarios de Facturas con dos decimales y conserva la indicación CLP', () => {
+    invoices.splice(
+      0,
+      invoices.length,
+      { id: 'FAC-FRACTIONAL', issued: '2026-09-30', due: '2026-10-30', amount: 1234.5, status: 'Pendiente' },
+    )
+
+    render(<InvoicesPage />)
+
+    const row = screen.getByRole('row', { name: /FAC-FRACTIONAL/ })
+
+    expect(within(row).getAllByRole('cell')[3].textContent?.replace(/^\D+/u, '')).toBe('1.234,50')
+    expect(screen.getByText('Los montos están expresados en pesos chilenos (CLP).')).toBeInTheDocument()
   })
 
   it('muestra el mensaje vacío en lugar de la tabla y conserva el contenido informativo', () => {

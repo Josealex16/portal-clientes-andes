@@ -2,6 +2,7 @@ import { render, screen, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it } from 'vitest'
 import { AuthProvider } from '../context/AuthContext'
+import { formatCurrency } from '../data/sampleData'
 import HomePage from './HomePage'
 
 function renderHomePage() {
@@ -21,6 +22,15 @@ describe('HomePage', () => {
     expect(
       screen.getByText('Este es el resumen de tu cuenta al día de hoy. Los montos incluyen IVA.'),
     ).toBeInTheDocument()
+  })
+
+  it('mantiene el formato compartido sin decimales para el saldo pendiente', () => {
+    renderHomePage()
+
+    const balance = screen.getByRole('heading', { name: 'Saldo pendiente' }).nextElementSibling
+
+    expect(balance).toHaveTextContent(formatCurrency(2879000))
+    expect(balance).toHaveTextContent(/^\D*2\.879\.000$/u)
   })
 
   it('muestra las novedades existentes en orden seguidas del aviso de Providencia', () => {
