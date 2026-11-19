@@ -1,5 +1,12 @@
-import { formatCurrency, formatDate, invoices } from '../data/sampleData'
+import { formatDate, invoices } from '../data/sampleData'
 import StatusBadge from '../components/StatusBadge'
+
+const formatInvoiceCurrency = new Intl.NumberFormat('es-CL', {
+  style: 'currency',
+  currency: 'CLP',
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+})
 
 function daysUntilDue(due: string, today: Date): number {
   const [year, month, day] = due.split('-').map(Number)
@@ -47,7 +54,7 @@ export default function InvoicesPage() {
                         <span> Vence en {daysRemaining} días</span>
                       )}
                     </td>
-                    <td className="table__num">{formatCurrency(invoice.amount)}</td>
+                    <td className="table__num">{formatInvoiceCurrency.format(invoice.amount)}</td>
                     <td>
                       <StatusBadge status={invoice.status} />
                     </td>
